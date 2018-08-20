@@ -5,6 +5,10 @@ class SuitsController < ApplicationController
     @suits = Suit.all
   end
 
+  def show
+    @suit = suit(suit_params)
+  end
+
   def new
     @suit = Suit.new
   end
