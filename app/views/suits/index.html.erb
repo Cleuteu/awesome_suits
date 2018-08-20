@@ -1,0 +1,23 @@
+<h1>My list of suits</h1>
+<% @suits.each do |suit| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_tag suit.photo, height: 300, width: 400, crop: :fill %>)">
+          <div class="card-category"><%#= link_to "(delete)", suit_path(suit),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %></div>
+          <div class="card-description">
+            <h2><%= suit.name %></h2>
+            <p><%= link_to "Show", suit_path(suit) %></p>
+          </div>
+          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%#= link_to "Add a suit", new_suit_path %>
+
+

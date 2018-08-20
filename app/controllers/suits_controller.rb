@@ -1,4 +1,10 @@
 class SuitsController < ApplicationController
+  before_action :set_suit, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @suits = Suit.all
+  end
+
   def new
     @suit = Suit.new
   end
@@ -18,5 +24,9 @@ class SuitsController < ApplicationController
 
   def suit_params
     params.require(:suit).permit(:user_id, :color, :description, :style, :size)
+  end
+
+  def set_suit
+    @suit = Suit.find(params[:id])
   end
 end
