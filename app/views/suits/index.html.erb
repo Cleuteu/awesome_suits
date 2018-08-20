@@ -1,23 +1,25 @@
 <h1>My list of suits</h1>
-<% @suits.each do |suit| %>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_tag suit.photo, height: 300, width: 400, crop: :fill %>)">
-          <div class="card-category"><%#= link_to "(delete)", suit_path(suit),
+<div class="container">
+  <div class="row">
+  <% @suits.each do |suit| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://reinformation.tv/wp-content/uploads/2017/03/Costumes-Fran%C3%A7ois-Fillon-D%C3%A9ontologue-Assembl%C3%A9e-50.000-Euros-2-e1489414647801.jpg');">
+        <div class="card-category">Popular</div>
+  <!-- <div class="card-category"><%#= link_to "(delete)", suit_path(suit),
               method: :delete,
-              data: { confirm: "Are you sure?" } %></div>
-          <div class="card-description">
-            <h2><%= suit.name %></h2>
-            <p><%= link_to "Show", suit_path(suit) %></p>
-          </div>
-          <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+              data: { confirm: "Are you sure?" } %></div> -->
+        <div class="card-description">
+            <h2>Costard</h2>
+            <p>Fillon approuve</p>
         </div>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <a class="card-link" href="#" ></a>
       </div>
     </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 
-<%#= link_to "Add a suit", new_suit_path %>
+      <%#= link_to "Add a suit", new_suit_path %>
 
 
