@@ -3,4 +3,9 @@ class SuitsController < ApplicationController
   def index
     @suits = Suit.all
   end
+  
+  private
+  def set_suit
+    @suit = Suit.find(params[:id])
+  end
 end
