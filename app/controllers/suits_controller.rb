@@ -6,7 +6,6 @@ class SuitsController < ApplicationController
   end
 
   def show
-    @suit = suit(suit_params)
   end
 
   def new
@@ -15,7 +14,7 @@ class SuitsController < ApplicationController
 
   def create
     @suit = Suit.new(suit_params)
-    @suit.user_id = current_user
+    @suit.user_id = current_user.id
 
     if @suit.save
       redirect_to suit_path(@suit)
@@ -27,7 +26,7 @@ class SuitsController < ApplicationController
   private
 
   def suit_params
-    params.require(:suit).permit(:user_id, :color, :description, :style, :size)
+    params.require(:suit).permit(:user_id, :color, :description, :style, :size, :name)
   end
 
   def set_suit
