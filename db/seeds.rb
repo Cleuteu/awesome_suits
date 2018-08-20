@@ -15,4 +15,14 @@ puts 'Creating users and suits...'
   suit.save!
 end
 
+puts 'Creating users Thomas, Eugene, Yoann and Alex'
+User.create!(email: 'marichalalex@yahoo.fr',
+              password: 'azerty')
+User.create!(email: 'e.ernoult@gmail.com',
+              password: 'azerty')
+User.create!(email: 'thomas.pouillevet@gmail.com',
+              password: 'azerty')
+User.create!(email: 'yoann.saunier@gmail.com',
+              password: 'azerty')
+
 puts 'Finished!'
