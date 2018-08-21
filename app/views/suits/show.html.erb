@@ -1,6 +1,12 @@
 <div class="container">
   <h2><%= @suit.name %></h2>
-  <%= cl_image_tag @suit.photo, height: 300, width: 200, crop: :fill %>
+
+  <% if @suit.photo.url.nil? %>
+    <%= cl_image_tag("placeholder090821.png", width: 200, height: 300, crop: :fill) %>
+  <% else %>
+    <%= cl_image_tag @suit.photo, height: 200, width: 300, crop: :fill %>
+  <% end %>
+
   <p>Color: <%= @suit.color %></p>
   <p>Size: <%= @suit.size %></p>
   <p>Description: <%= @suit.description %></p>
