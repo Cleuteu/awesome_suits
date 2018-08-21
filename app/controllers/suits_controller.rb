@@ -6,6 +6,7 @@ class SuitsController < ApplicationController
   end
 
   def show
+    @renting = Renting.new
   end
 
   def new
