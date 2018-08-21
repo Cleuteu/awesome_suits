@@ -3,9 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 40px;
+  font-size: 12px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  margin-top: 100vh;
 }
 .footer-links {
   display: flex;
@@ -23,4 +25,8 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.fab {
+  font-size: 16px;
 }
