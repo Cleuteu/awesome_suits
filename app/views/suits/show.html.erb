@@ -1,5 +1,6 @@
 <div class="container">
   <h2><%= @suit.name %></h2>
+  <%= cl_image_tag @suit.photo, height: 300, width: 200, crop: :fill %>
   <p>Color: <%= @suit.color %></p>
   <p>Size: <%= @suit.size %></p>
   <p>Description: <%= @suit.description %></p>

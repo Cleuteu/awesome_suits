@@ -11,6 +11,8 @@
             <%= f.input :style %>
             <%= f.input :size %>
             <%= f.input :price_per_day %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
             <%= f.submit "Add a new suit", class: "btn btn-success" %>
           <% end %>
         </div>
