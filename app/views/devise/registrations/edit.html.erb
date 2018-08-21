@@ -12,7 +12,7 @@
 
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
-                required: false
+                required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: false,
@@ -21,6 +21,14 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <% if @user.photo.url.nil? %>
+      <%= cl_image_tag("tzcn9jxryoawvskg0s80.png", width: 200, height: 200, crop: :fill) %>
+    <% else %>
+      <%= cl_image_tag @user.photo, height: 200, width: 300, crop: :fill %>
+    <% end %>
+    <%= f.input :photo,
+                required: false %>
+    <%= f.input :photo_cache, as: :hidden %>
   </div>
 
   <div class="form-actions">
