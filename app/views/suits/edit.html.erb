@@ -1,0 +1,26 @@
+<div class="new-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-offset-md-3 col-md-6">
+        <h1> Edit your suit </h1>
+        <div>
+          <%= simple_form_for @suit do |f| %>
+            <%= f.input :name %>
+            <%= f.input :color %>
+            <%= f.input :description %>
+            <%= f.input :style %>
+            <%= f.input :size %>
+            <%= f.input :price_per_day %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.submit "Edit my suit", class: "btn btn-success" %>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to "Back", suits_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
