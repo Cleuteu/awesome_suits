@@ -13,8 +13,12 @@
   <p>Description: <%= @suit.description %></p>
   <p>Price: <%= @suit.price_per_day %></p>
 
-<h3>This suit is not available to this dates : </h3>
-<% @rentings.each do |renting| %>
+  <% if policy(@suit).edit? %>
+    <%= link_to "Update", edit_suit_path(@suit) %>
+  <% end %>
+
+  <h3>This suit is not available to this dates : </h3>
+  <% @rentings.each do |renting| %>
   <ul>
     <% if renting.suit_id == @suit.id %>
       <li>
@@ -23,8 +27,7 @@
       </li>
     <% end %>
   </ul>
-<% end %>
+  <% end %>
 
-<%= render 'formrenting', renting: @renting %>
-
+  <%= render 'formrenting', renting: @renting %>
 </div>
