@@ -1,76 +1,42 @@
-<div class="container">
-  <h1>All suits</h1>
-    <div class="row">
-      <% @suits.each do |suit| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <div class="wrapper">
-          <div class="card-container">
-            <div class="top"></div>
-            <div class="bottom">
-              <div class="left">
-                <div class="details">
-                  <h1><%= suit.name %></h1>
-                  <p><%= suit.price_per_day %> €</p>
-                </div>
-                <div class="buy"><i class="material-icons">add_shopping_cart</i></div>
+<div class="container" style="padding-top: 128px;">
+  <div class="row">
+    <% @suits.each do |suit| %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="wrapper">
+        <div class="card-container">
+          <div class="top"></div>
+          <div class="bottom">
+            <div class="left">
+              <div class="details">
+                <h1><%= suit.name %></h1>
+                <p><%= suit.price_per_day %> €</p>
               </div>
-              <div class="right">
-                <div class="done"><i class="material-icons">done</i></div>
-                <div class="details">
-                  <h1><%= suit.name %></h1>
-                  <p>Added to your cart</p>
-                </div>
-                <div class="remove"><i class="material-icons">clear</i></div>
-              </div>
+              <div class="buy"><i class="material-icons">add_shopping_cart</i></div>
             </div>
-          </div>
-          <div class="inside">
-            <div class="icon"><i class="material-icons">info_outline</i></div>
-            <div class="contents">
-              <table>
-                <tr>
-                  <th>Width</th>
-                  <th>Height</th>
-                </tr>
-                <tr>
-                  <td>3000mm</td>
-                  <td>4000mm</td>
-                </tr>
-                <tr>
-                  <th>Something</th>
-                  <th>Something</th>
-                </tr>
-                <tr>
-                  <td>200mm</td>
-                  <td>200mm</td>
-                </tr>
-                <tr>
-                  <th>Something</th>
-                  <th>Something</th>
-                </tr>
-                <tr>
-                  <td>200mm</td>
-                  <td>200mm</td>
-                </tr>
-                <tr>
-                  <th>Something</th>
-                  <th>Something</th>
-                </tr>
-                <tr>
-                  <td>200mm</td>
-                  <td>200mm</td>
-                </tr>
-              </table>
+            <div class="right">
+              <div class="done"><i class="material-icons">done</i></div>
+              <div class="details">
+                <h1><%= suit.name %></h1>
+                <p>Added to your cart</p>
+              </div>
+              <div class="remove"><i class="material-icons">clear</i></div>
             </div>
           </div>
         </div>
+        <div class="inside">
+          <div class="icon"><i class="material-icons">info_outline</i></div>
+          <div class="contents">
+            <%#= suit.description %>
+            <p>Description</p>
+          </div>
+        </div>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
 
 <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<%= javascript_include_tag 'application' %>
 
 <!-- <div class="container">
   <h1>All suits</h1>
