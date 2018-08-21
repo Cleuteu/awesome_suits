@@ -6,5 +6,5 @@ initUpdateNavbarOnScroll();
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
-import { cart } from '../components/cart';
-cart();
+import { cartAnim } from '../components/card';
+cartAnim();
