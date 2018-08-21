@@ -11,4 +11,13 @@ function initUpdateNavbarOnScroll() {
   }
 }
 
+function changeNavbarBackOnHomepage() {
+  const path = window.location.pathname
+  const navbar = document.querySelector('.navbar-wagon');
+  if (path === "/") {
+    navbar.classList.add('navbar-wagon-background-transparent');
+  }
+}
+
 export { initUpdateNavbarOnScroll };
+export { changeNavbarBackOnHomepage };
