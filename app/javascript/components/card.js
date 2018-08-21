@@ -1,4 +1,4 @@
-function cart() {
+function cartAnim() {
   $('.buy').click(function(){
     $('.bottom').addClass("clicked");
   });
@@ -7,4 +7,4 @@ function cart() {
   });
 }
 
-export { cart };
+export { cartAnim };

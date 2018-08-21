@@ -8,5 +8,5 @@ changeNavbarBackOnHomepage();
 import { loadDynamicBannerText } from '../components/banner';
 loadDynamicBannerText();
 
-import { cart } from '../components/card';
-cart();
+import { cartAnim } from '../components/card';
+cartAnim();
