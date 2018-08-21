@@ -9,7 +9,11 @@
 }
 .alert-info {
   background: $green;
+  border: 0;
+  border-radius: 0;
 }
 .alert-warning {
   background: $red;
+  border: 0;
+  border-radius: 0;
 }

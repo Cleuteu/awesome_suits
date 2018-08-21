@@ -14,8 +14,10 @@ function initUpdateNavbarOnScroll() {
 function changeNavbarBackOnHomepage() {
   const path = window.location.pathname
   const navbar = document.querySelector('.navbar-wagon');
+  const banner = document.querySelector('.banner');
   if (path === "/") {
     navbar.classList.add('navbar-wagon-background-transparent');
+    banner.classList.add('navbar-fixed-top');
   }
 }
 
