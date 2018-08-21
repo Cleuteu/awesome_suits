@@ -1,15 +1,16 @@
 body{
-  background: #E3E3D8;
+  // background: #E3E3D8;
+  background: #F7F7F7;
 }
 .wrapper{
   width: 300px;
   height: 500px;
-  background: white;
+  // background: white;
   margin: auto;
   position: relative;
   overflow: hidden;
   border-radius: 10px 10px 10px 10px;
-  box-shadow: 0;
+  box-shadow: 1px 4px 6px rgba(0,0,0,0.1);
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
   &:hover{
@@ -45,19 +46,27 @@ body{
       .left{
         height:100%;
         width: 50%;
-        background: #f4f4f4;
+        // background: #f4f4f4;
+        background: white;
         position:relative;
         float:left;
         .details{
           padding: 20px;
           float: left;
           width: calc(70% - 40px);
+          h1, p {
+            font-size: 16px;
+          }
+          p {
+            line-height: 32px;
+          }
         }
         .buy{
           float:right;
           width: calc(30% - 2px);
           height:100%;
-          background: #f1f1f1;
+          // background: #f1f1f1;
+          background: white;
           transition: background 0.5s;
           border-left:solid thin rgba(0,0,0,0.1);
           i{
@@ -83,9 +92,12 @@ body{
         height:200%;
         overflow: hidden;
         .details{
-          padding: 20px;
+          padding: 29px;
           float: right;
           width: calc(70% - 40px);
+          p {
+            font-size: 14px;
+          }
         }
         .done{
           width: calc(30% - 2px);
