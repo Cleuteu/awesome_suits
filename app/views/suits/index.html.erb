@@ -9,14 +9,14 @@
           <% else %>
             <% url2 = cl_image_path suit.photo %>
           <% end %>
-          <div class="top" style="background-image: url('<%= url2 %>');"></div>
+          <div class="top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url2 %>');"></div>
           <div class="bottom">
             <div class="left">
               <div class="details">
                 <h1><%= suit.name %></h1>
                 <p><%= suit.price_per_day %> €</p>
               </div>
-              <div class="buy"><i class="material-icons">add_shopping_cart</i></div>
+              <!-- <div class="buy"><i class="material-icons">add_shopping_cart</i></div> -->
             </div>
             <div class="right">
               <div class="done"><i class="material-icons">done</i></div>
@@ -27,17 +27,18 @@
             </div>
           </div>
         </div>
-        <div class="inside">
+        <!-- <div class="inside">
           <div class="icon"><i class="material-icons">info_outline</i></div>
           <div class="contents">
-            <p>Style: <i><%= suit.style %></i></p>
-            <p>Size: <%= suit.size %></p>
+            <p>Style: <i><%#= suit.style %></i></p>
+            <p>Size: <%#= suit.size %></p>
             <p>Description:</p>
-            <p><i><%= suit.description %></i></p>
+            <p><i><%#= suit.description %></i></p>
           </div>
-        </div>
-        <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
-        <%#= link_to suit_path(suit), class: 'card-link' do %><%# end %>
+        </div> -->
+        <%#= cl_image_path suit.user.photo, class: 'card-user' %>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
       </div>
     </div>
     <% end %>
