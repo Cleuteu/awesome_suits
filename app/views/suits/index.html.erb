@@ -36,8 +36,8 @@
             <p><i><%#= suit.description %></i></p>
           </div>
         </div> -->
-        <%#= cl_image_path suit.user.photo, class: 'card-user' %>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <%= cl_image_tag suit.user.photo, class: 'card-user' %>
+        <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
         <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
       </div>
     </div>
