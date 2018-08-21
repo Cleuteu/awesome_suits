@@ -23,6 +23,11 @@ class SuitsController < ApplicationController
     end
   end
 
+  def destroy
+    @suit.destroy!
+    redirect_to owner_index_path
+  end
+
   def owner_index
     @suits = Suit.where(user_id: current_user)
   end
