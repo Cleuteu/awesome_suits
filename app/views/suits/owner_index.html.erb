@@ -7,7 +7,7 @@
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://reinformation.tv/wp-content/uploads/2017/03/Costumes-Fran%C3%A7ois-Fillon-D%C3%A9ontologue-Assembl%C3%A9e-50.000-Euros-2-e1489414647801.jpg')">
             <div class="card-category">
               <% if policy(suit).destroy? %>
-                <%= link_to "(delete)", suit_path(suit),
+                <%= link_to "(delete)", owner_index_path,
                     method: :delete,
                     data: { confirm: "Are you sure?" } %>
               <% end %>
