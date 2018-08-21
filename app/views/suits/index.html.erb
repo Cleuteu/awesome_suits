@@ -9,10 +9,13 @@
                 method: :delete,
                 data: { confirm: "Are you sure?" } %></div>
             <div class="card-description">
-              <h2><%= suit.name %></h2>
-              <p><%= link_to "Show", suit_path(suit) %></p>
+              <div style="display: flex; justify-content: space-between;">
+                <h2><%= suit.name %></h2>
+                <p><%= suit.price_per_day %> €</p>
+              </div>
             </div>
             <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
           </div>
         </div>
       <% end %>
@@ -20,5 +23,3 @@
   </div>
 
 <%#= link_to "Add a suit", new_suit_path %>
-
-
