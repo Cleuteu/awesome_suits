@@ -11,21 +11,20 @@
 
       <!-- Links when logged in -->
       <%= link_to "Discover our suits", suits_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Offer your suits", new_suit_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Offer your suit", new_suit_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% if current_user.photo.url.nil? %>
+            <%= cl_image_tag("tzcn9jxryoawvskg0s80.png", crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+          <% else %>
+            <%= cl_image_tag current_user.photo, height: 200, width: 200, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Edit profile") %>
               <% end %>
             </li>
             <li>
