@@ -5,17 +5,17 @@
   <p>Description: <%= @suit.description %></p>
   <p>Price: <%= @suit.price_per_day %></p>
 
-  <div class="col-offset-md-3 col-md-6">
-    <h1> Rent this awesome suit </h1>
-    <div>
-      <%= simple_form_for @renting do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.submit "Reserve this suit", class: "btn btn-success" %>
-      <% end %>
-    </div>
-    <div>
-      <%= link_to "Back", suits_path, class: 'btn btn-primary' %>
-    </div>
-  </div>
+<h3>This suit is not available to this dates : </h3>
+<% @rentings.each do |renting| %>
+  <ul>
+    <% if renting.suit_id == @suit.id %>
+      <li>
+        <%= renting.start_date %> to <%= renting.end_date %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render 'formrenting', renting: @renting %>
+
 </div>

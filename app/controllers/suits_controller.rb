@@ -1,16 +1,18 @@
 class SuitsController < ApplicationController
-  before_action :set_suit, only: [:show, :edit, :update, :destroy]
+  before_action :set_suit, only: [:edit, :update, :destroy]
 
   def index
     @suits = Suit.all
   end
 
   def show
+    @suit = Suit.find(params[:id])
+    @rentings = Renting.all
     @renting = Renting.new
+    @renting.suit = @suit
   end
 
   def new
-    @suit = Suit.new
   end
 
   def create

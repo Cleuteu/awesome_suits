@@ -2,17 +2,17 @@ class RentingsController < ApplicationController
   before_action :set_renting, only: [:show, :edit, :update, :destroy]
 
   def create
+    @suit = Suit.find(params[:suit_id])
     @renting = Renting.new(renting_params)
     @renting.user_id = current_user.id
-    @renting.suit_id = Suit.find(params[:id])
+    @renting.suit_id = @suit.id
+
     if @renting.save
-      redirect_to renting_path(@renting)
+      redirect_to suit_path(@suit)
     else
       render './suits/show'
     end
   end
-
-
 
   private
 
