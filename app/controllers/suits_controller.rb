@@ -24,10 +24,14 @@ class SuitsController < ApplicationController
     end
   end
 
+  def owner_index
+    @suits = Suit.where(user_id: current_user)
+  end
+
   private
 
   def suit_params
-    params.require(:suit).permit(:user_id, :color, :description, :style, :size, :name)
+    params.require(:suit).permit(:user_id, :color, :description, :style, :size, :name, :photo)
   end
 
   def set_suit
