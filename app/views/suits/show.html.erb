@@ -1,5 +1,6 @@
 <div class="container">
   <h2><%= @suit.name %></h2>
+  <h3>By <%= User.find(@suit.user_id).first_name %> <%= User.find(@suit.user_id).last_name %> </h3>
 
   <% if @suit.photo.url.nil? %>
     <%= cl_image_tag("placeholder090821.png", width: 200, height: 300, crop: :fill) %>
