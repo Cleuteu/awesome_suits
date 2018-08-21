@@ -12,6 +12,7 @@ class SuitsController < ApplicationController
   end
 
   def new
+    @suit = Suit.new
   end
 
   def create
