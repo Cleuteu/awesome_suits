@@ -4,7 +4,12 @@
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
       <div class="wrapper">
         <div class="card-container">
-          <div class="top" style='background-image: url("https://www.tom-murphy.ie/wp-content/uploads/2017/06/Paris-Navy-4-.jpg");'></div>
+          <% if suit.photo.url.nil? %>
+            <% url2 = cl_image_path('placeholder090821.png') %>
+          <% else %>
+            <% url2 = cl_image_path suit.photo %>
+          <% end %>
+          <div class="top" style="background-image: url('<%= url2 %>');"></div>
           <div class="bottom">
             <div class="left">
               <div class="details">
@@ -25,10 +30,14 @@
         <div class="inside">
           <div class="icon"><i class="material-icons">info_outline</i></div>
           <div class="contents">
-            <%#= suit.description %>
-            <p>Description</p>
+            <p>Style: <i><%= suit.style %></i></p>
+            <p>Size: <%= suit.size %></p>
+            <p>Description:</p>
+            <p><i><%= suit.description %></i></p>
           </div>
         </div>
+        <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
+        <%#= link_to suit_path(suit), class: 'card-link' do %><%# end %>
       </div>
     </div>
     <% end %>
