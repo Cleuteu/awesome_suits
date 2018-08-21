@@ -10,7 +10,11 @@
                 data: { confirm: "Are you sure?" } %></div>
             <div class="card-description">
               <h2><%= suit.name %></h2>
-              <p><%= link_to "Show", suit_path(suit) %></p>
+              <p><%= link_to "Show", suit_path(suit) %>
+              <% if policy(suit).edit? %>
+                  <%= link_to "Update", edit_suit_path(suit) %>
+                <% end %>
+              </p>
             </div>
             <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
           </div>
