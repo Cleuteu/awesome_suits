@@ -1,14 +1,10 @@
-function cart(){
-  console.log('Hello World')
+function cart() {
   $('.buy').click(function(){
     $('.bottom').addClass("clicked");
   });
-
   $('.remove').click(function(){
     $('.bottom').removeClass("clicked");
   });
 }
 
-
 export { cart };
-
