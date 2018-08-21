@@ -11,4 +11,18 @@
   <p>Size: <%= @suit.size %></p>
   <p>Description: <%= @suit.description %></p>
   <p>Price: <%= @suit.price_per_day %></p>
+
+<h3>This suit is not available to this dates : </h3>
+<% @rentings.each do |renting| %>
+  <ul>
+    <% if renting.suit_id == @suit.id %>
+      <li>
+        <%= renting.start_date %> to <%= renting.end_date %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render 'formrenting', renting: @renting %>
+
 </div>
