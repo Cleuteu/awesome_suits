@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :rentings, only: [:create]
   end
 
-  resources :rentings, only: [:show]
+  resources :rentings, only: [:show, :destroy]
 
   namespace :owner do
     resources :suits

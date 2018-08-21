@@ -14,6 +14,12 @@ class RentingsController < ApplicationController
     end
   end
 
+  def destroy
+    @renting.destroy!
+    @suit = Suit.find(@renting.suit_id)
+    redirect_to suit_path(@suit)
+  end
+
   private
 
   def renting_params
@@ -21,7 +27,7 @@ class RentingsController < ApplicationController
   end
 
   def set_renting
-    @renting = renting.find(params[:id])
+    @renting = Renting.find(params[:id])
   end
 
 
