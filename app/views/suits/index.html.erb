@@ -18,8 +18,22 @@
               </div>
             </div>
           </div>
-          <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user' %>
-          <p class="card-price"><%= suit.price_per_day %> €</p>
+          <!-- <div class="inside">
+            <div class="icon"><i class="material-icons">info_outline</i></div>
+            <div class="contents">
+              <p>Style: <i><%#= suit.style %></i></p>
+              <p>Size: <%#= suit.size %></p>
+              <p>Description:</p>
+              <p><i><%#= suit.description %></i></p>
+            </div>
+          </div> -->
+            <% if suit.user.photo.url.nil? %>
+              <%= cl_image_tag("vh5z2ujeausr6hlxy3zf", width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user') %>
+            <% else %>
+              <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user' %>
+            <% end %>
+            <p class="card-price"><%= suit.price_per_day %> €</p>
+          <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
           <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
         </div>
       </div>
