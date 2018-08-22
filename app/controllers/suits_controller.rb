@@ -62,6 +62,7 @@ class SuitsController < ApplicationController
   def destroy
     @suit.destroy!
     redirect_to owner_index_path
+    authorize @suit
   end
 
   def owner_index

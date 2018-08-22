@@ -11,15 +11,15 @@
 
       <!-- Links when logged in -->
       <%= link_to "Discover our suits", suits_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Offer your suit", new_suit_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Your suits", owner_index_path, class: "navbar-wagon-item navbar-wagon-link" %><%= link_to "Add a suit", new_suit_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <% if current_user.photo.url.nil? %>
-            <%= cl_image_tag("tzcn9jxryoawvskg0s80.png", crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
+            <%= cl_image_tag("tzcn9jxryoawvskg0s80.png", crop: :fill, class: "avatar dropdown-expand", id: "navbar-wagon-menu", "data-toggle" => "dropdown") %>
           <% else %>
-            <%= cl_image_tag current_user.photo, height: 200, width: 200, crop: :fill, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+            <%= cl_image_tag current_user.photo, height: 200, width: 200, crop: :fill, class: "avatar dropdown-expand", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
@@ -44,7 +44,7 @@
   <!-- Dropdown list appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <i class="fa fa-bars dropdown-expand" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li><a href="#">Some mobile link</a></li>
         <li><a href="#">Other one</a></li>
