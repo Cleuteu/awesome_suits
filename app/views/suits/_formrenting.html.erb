@@ -1,16 +1,13 @@
-  <div class="col-offset-md-3 col-md-6">
+  <div class="col-offset-md-3 col-md-6" style="margin-top: 15px;">
    <!--  <p> Rent this awesome suit </p> -->
-    <div
-      id="renting-form-div"
-      data-rentings="<%= @markers.to_json %>"
-    >
+    <div id="renting-form-div" data-rentings="<%= @markers.to_json %>">
       <%= simple_form_for [@suit, @renting] do |f| %>
         <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
         <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
         <%= f.submit "Reserve this suit", class: "btn btn-success" %>
       <% end %>
     </div>
-    <div>
-      <%= link_to "Back", suits_path, class: 'btn btn-primary' %>
-    </div>
+    <!-- <div> -->
+      <%#= link_to "Back", suits_path, class: 'btn btn-primary' %>
+    <!-- </div> -->
   </div>
