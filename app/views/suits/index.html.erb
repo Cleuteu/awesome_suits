@@ -13,9 +13,7 @@
             <% end %>
             <div class="top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url2 %>');"></div>
             <div class="bottom">
-              <div>
-                <h1 style="width: 200px;"><%= suit.name %></h1>
-              </div>
+              <h1 style="width: 200px;"><%= suit.name %></h1>
             </div>
           </div>
           <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user' %>
