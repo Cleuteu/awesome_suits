@@ -43,7 +43,7 @@ class SuitsController < ApplicationController
     @suit.user_id = current_user.id
     authorize @suit
     if @suit.save
-      redirect_to suit_path(@suit)
+      redirect_to owner_index_path(@suit)
     else
       render :new
     end
