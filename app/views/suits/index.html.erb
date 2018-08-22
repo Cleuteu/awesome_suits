@@ -1,4 +1,4 @@
-<div class="container" style="padding-top: 128px;">
+<div class="container" style="padding: 70px 0;">
   <div class="row">
     <% @suits.each do |suit| %>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
@@ -12,19 +12,19 @@
           <div class="top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url2 %>');"></div>
           <div class="bottom">
             <div class="left">
-              <div class="details">
+              <div class="details" style="display: flex; align-items: center; justify-content: space-between;">
                 <h1><%= suit.name %></h1>
                 <p><%= suit.price_per_day %> €</p>
               </div>
               <!-- <div class="buy"><i class="material-icons">add_shopping_cart</i></div> -->
             </div>
-            <div class="right">
+            <!-- <div class="right">
               <div class="done"><i class="material-icons">done</i></div>
               <div class="details">
                 <p>Added to wishlist</p>
               </div>
               <div class="remove"><i class="material-icons">clear</i></div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- <div class="inside">
@@ -36,7 +36,7 @@
             <p><i><%#= suit.description %></i></p>
           </div>
         </div> -->
-        <%= cl_image_tag suit.user.photo, class: 'card-user' %>
+        <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user' %>
         <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
         <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
       </div>
