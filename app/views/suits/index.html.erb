@@ -38,7 +38,11 @@
               <p><i><%#= suit.description %></i></p>
             </div>
           </div> -->
-          <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user' %>
+            <% if suit.user.photo.url.nil? %>
+              <%= cl_image_tag("vh5z2ujeausr6hlxy3zf", width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user') %>
+            <% else %>
+              <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user' %>
+            <% end %>
           <!-- <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay"> -->
           <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
         </div>
