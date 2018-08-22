@@ -30,3 +30,13 @@ h3 {
   font-size: 30px;
   font-weight: normal;
 }
+
+.renting-form-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date-holder {
+  display: none !important;
+}
