@@ -1,11 +1,9 @@
 body{
-  // background: #E3E3D8;
   background: #F7F7F7;
 }
 .wrapper{
   width: 300px;
   height: 500px;
-  // background: white;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -21,12 +19,12 @@ body{
     width:100%;
     height:100%;
     .top{
-      height: 84%;
+      height: 90%;
       background: no-repeat center;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
   -o-background-size: 100%;
-  background-size: 100%;
+  background-size: auto 100%;
     }
     .bottom{
       width: 200%;
@@ -46,26 +44,25 @@ body{
       .left{
         height:100%;
         width: 50%;
-        // background: #f4f4f4;
         background: white;
         position:relative;
         float:left;
         .details{
-          padding: 20px;
-          float: left;
-          width: calc(70% - 40px);
-          h1, p {
-            font-size: 16px;
+          padding: 14px;
+          // float: left;
+          // width: calc(70% - 40px);
+          h1 {
+            font-size: 18px;
           }
           p {
-            line-height: 32px;
+          //   line-height: 32px;
+          font-size: 16px;
           }
         }
         .buy{
           float:right;
           width: calc(30% - 2px);
           height:100%;
-          // background: #f1f1f1;
           background: white;
           transition: background 0.5s;
           border-left:solid thin rgba(0,0,0,0.1);
@@ -210,7 +207,7 @@ body{
   bottom: 40px;
   width: 80px;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.33);
   border: white 1px solid;
 }
 // .card-category {
