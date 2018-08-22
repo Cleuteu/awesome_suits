@@ -2,7 +2,7 @@
    <!--  <p> Rent this awesome suit </p> -->
     <div
       id="renting-form-div"
-      data-rentings="<%= @markers.to_json %>"
+      data-rentings="<%= @rentings_dates.to_json %>"
     >
       <%= simple_form_for [@suit, @renting], html: { class: "" } do |f| %>
         <div class="row">
