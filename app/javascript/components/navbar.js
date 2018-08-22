@@ -19,6 +19,9 @@ function changeNavbarBackOnHomepage() {
     navbar.classList.add('navbar-wagon-background-transparent');
     banner.classList.add('banner-under-navbar');
   }
+  else if (path === "/suits/new") {
+    navbar.classList.add('navbar-wagon-background-transparent');
+  }
 }
 
 export { initUpdateNavbarOnScroll };
