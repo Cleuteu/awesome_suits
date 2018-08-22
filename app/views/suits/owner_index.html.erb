@@ -1,33 +1,44 @@
-<h1>My suits</h1>
+<div class="container">
 
-  <div class="container">
+  <h1>My suits</h1>
+
+  <div class="container" style="padding: 0; padding-bottom: 80px;">
     <div class="row">
       <% @suits.each do |suit| %>
-        <% if suit.photo.url.nil? %>
-          <% url2 = cl_image_path('placeholder090821.png') %>
-        <% else %>
-          <% url2 = cl_image_path suit.photo %>
-        <% end %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://reinformation.tv/wp-content/uploads/2017/03/Costumes-Fran%C3%A7ois-Fillon-D%C3%A9ontologue-Assembl%C3%A9e-50.000-Euros-2-e1489414647801.jpg')">
-            <div class="card-category">
-              <% if policy(suit).destroy? %>
-                <%= link_to "(delete)", owner_index_path,
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } %>
-              <% end %>
-              <% if policy(suit).edit? %>
-                <%= link_to "(Update)", edit_suit_path(suit) %>
-              <% end %>
-            </div>
-            <div class="card-description">
-              <h2><%= suit.name %></h2>
-              <p>
-                <%= link_to "Show", suit_path(suit) %>
-              </p>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+        <div class="wrapper">
+          <div class="card-container">
+            <% if suit.photo.url.nil? %>
+              <% url2 = cl_image_path('placeholder090821.png') %>
+            <% else %>
+              <% url2 = cl_image_path suit.photo %>
+            <% end %>
+            <div class="top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url2 %>');"></div>
+            <div class="bottom">
+              <div class="left">
+                <div class="details" style="display: flex; align-items: center; justify-content: space-between;">
+                  <h1><%= suit.name %></h1>
+                  <p><%= suit.price_per_day %> €</p>
+                </div>
+              </div>
             </div>
           </div>
+          <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user' %>
+          <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
         </div>
+        <div class="text-center">
+          <% if policy(suit).edit? %>
+            <%= link_to "Update", edit_suit_path(suit), class: "btn btn-link" %>
+          <% end %>
+          <% if policy(suit).destroy? %>
+            <%= link_to "Delete", suit_path(suit),
+                method: :delete,
+                data: { confirm: "Are you sure?" }, class: "btn btn-link" %>
+          <% end %>
+        </div>
+
+      </div>
       <% end %>
     </div>
   </div>
+</div>
