@@ -18,7 +18,7 @@ class SuitsController < ApplicationController
     @renting = Renting.new
     @renting.suit = @suit
     @rentings = Renting.where(suit_id: @suit.id)
-    @markers = @rentings.map do |renting|
+    @rentings_dates = @rentings.map do |renting|
       {
         from: renting.start_date,
         to: renting.end_date
