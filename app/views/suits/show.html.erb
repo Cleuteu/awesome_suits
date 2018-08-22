@@ -1,37 +1,55 @@
-<div class="container">
-  <h2><%= @suit.name %></h2>
-  <h3>By <%= User.find(@suit.user_id).first_name %> <%= User.find(@suit.user_id).last_name %> </h3>
+<% if @suit.photo.url.nil? %>
+  <% url2 = cl_image_tag("placeholder090821.png") %>
+<% else %>
+  <% url2 = cl_image_tag @suit.photo %>
+<% end %>
 
-  <% if @suit.photo.url.nil? %>
-    <%= cl_image_tag("placeholder090821.png", width: 200, height: 300, crop: :fill) %>
-  <% else %>
-    <%= cl_image_tag @suit.photo, height: 200, width: 300, crop: :fill %>
-  <% end %>
+<div class="show-banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%), url('url2');">
+</div>
 
-  <p>Color: <%= @suit.color %></p>
-  <p>Size: <%= @suit.size %></p>
-  <p>Description: <%= @suit.description %></p>
-  <p>Price: <%= @suit.price_per_day %></p>
+<div class="container" style="margin-top: -100px; margin-bottom: 70px; display: flex;">
+  <div class="left">
+    <h2><%= @suit.name %></h2>
+    <p>By <%= User.find(@suit.user_id).first_name %> <%= User.find(@suit.user_id).last_name %> </p>
 
-  <% if policy(@suit).edit? %>
-    <%= link_to "Update", edit_suit_path(@suit) %>
-  <% end %>
+    <p>Color: <%= @suit.color %></p>
+    <p>Size: <%= @suit.size %></p>
+    <p>Description: <%= @suit.description %></p>
+    <p>Price: <%= @suit.price_per_day %></p>
+    <p>Address: <%= @suit.address %></p>
 
-  <h3>This suit is not available to this dates : </h3>
-  <% @rentings.each do |renting| %>
-  <ul>
-    <% if renting.suit_id == @suit.id %>
-      <li>
-        <%= renting.start_date %> to <%= renting.end_date %>
-        <% if policy(renting).destroy? %>
-          <%= link_to "(delete)", suit_path(@suit),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-        <% end %>
-      </li>
+    <% if @suit.photo.url.nil? %>
+      <%= cl_image_tag("placeholder090821.png", width: 200, height: 300, crop: :fill) %>
+    <% else %>
+      <%= cl_image_tag @suit.photo, height: 200, width: 300, crop: :fill %>
     <% end %>
-  </ul>
-  <% end %>
 
-  <%= render 'formrenting', renting: @renting %>
+    <% if policy(@suit).edit? %>
+      <%= link_to "Update", edit_suit_path(@suit) %>
+    <% end %>
+  </div>
+  <div class="right">
+    <p>This suit is not available to this dates : </p>
+    <% @rentings.each do |renting| %>
+      <ul>
+      <% if renting.suit_id == @suit.id %>
+        <li>
+          <%= renting.start_date %> to <%= renting.end_date %>
+          <% if policy(renting).destroy? %>
+            <%= link_to "(delete)", suit_path(@suit),
+                method: :delete,
+                data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </li>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <%= render 'formrenting', renting: @renting %>
+  </div>
+</div>
+
+<div class="container" style="margin-top: -100px; margin-bottom: 70px;">
+  <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @marker.to_json %>">
+  </div>
 </div>
