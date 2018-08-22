@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "gmaps": "^0.4.24",
     "jquery": "^3.3.1",
     "typed.js": "^2.0.9"
   },

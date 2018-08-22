@@ -3,7 +3,15 @@ class SuitsController < ApplicationController
   before_action :set_suit, only: [:show, :edit, :update, :destroy]
 
   def index
-    @suits = policy_scope(Suit).order(created_at: :desc)
+    @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
+
+    @markers = @suits.map do |suit|
+      {
+        lat: suit.latitude,
+        lng: suit.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/suits/map_box", locals: { suit: suit }) }
+      }
+    end
   end
 
   def show
@@ -52,7 +60,7 @@ class SuitsController < ApplicationController
   private
 
   def suit_params
-    params.require(:suit).permit(:user_id, :color, :description, :style, :size, :name, :photo, :price_per_day)
+    params.require(:suit).permit(:user_id, :color, :description, :style, :size, :name, :photo, :price_per_day, :address)
   end
 
   def set_suit
