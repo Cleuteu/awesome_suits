@@ -1,5 +1,7 @@
 import "bootstrap";
 
+import "../plugins/flatpickr"
+
 import { cartAnim } from '../components/card';
 cartAnim();
 
