@@ -30,18 +30,33 @@ url_user = ['https://vignette.wikia.nocookie.net/peaky-blinders/images/9/93/Tomm
 ]
 
 
+suits_address = [ '64, rue de la Hulotais SAINT-QUENTIN france',
+                  '16 Rue Réaumur Paris France',
+                  '4 Rue Paradis, Marseille, France',
+                  '15 Rue Léon Gambetta, Lille, France',
+                  '2 Rue de Strasbourg, Nantes, France',
+                  '14 Rue des Marchands, Colmar, France',
+                  '23 Rue de Toulon, Toulouse, France',
+                  '2 Rue Paul Vaillant Couturier, Argenteuil, France',
+                  '15 Rue Marc Massy, Saint-Germain, France',
+                  '3 Rue Maréchal Foch, Perpignan, France'
+
+]
+
 i = 9
 10.times do
   user = User.new(email: Faker::Internet.email,
               password: Faker::Number.number(7),
               first_name: Faker::Name.first_name,
-              last_name: Faker::Name.last_name)
+              last_name: Faker::Name.last_name,
+              phone: "06#{Faker::Number.number(8)}" )
   user.remote_photo_url = url_user[i]
   user.save!
   suit = Suit.new(name: Faker::Pokemon.name,
                 color: Faker::Color.color_name,
                 price_per_day: Faker::Number.between(35, 180),
-                size: ['S', 'M', 'L', 'XL'].sample,)
+                size: ['S', 'M', 'L', 'XL'].sample,
+                address: suits_address[i])
   suit.remote_photo_url = url_suit[i]
   suit.user_id = user.id
   suit.save!
