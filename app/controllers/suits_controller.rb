@@ -25,13 +25,12 @@ class SuitsController < ApplicationController
       }
     end
     authorize @suit
-    @marker = @suit.map do |suit|
+    @marker =
       {
-        lat: suit.latitude,
-        lng: suit.longitude#,
+        lat: @suit.latitude,
+        lng: @suit.longitude#,
         # infoWindow: { content: render_to_string(partial: "/suits/map_box", locals: { suit: suit }) }
       }
-    end
   end
 
   def new
