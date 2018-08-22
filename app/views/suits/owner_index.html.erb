@@ -18,7 +18,11 @@
               <h1 style="width: 200px;"><%= suit.name %></h1>
             </div>
           </div>
-          <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user' %>
+          <% if suit.user.photo.url.nil? %>
+            <%= cl_image_tag("vh5z2ujeausr6hlxy3zf", width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user') %>
+          <% else %>
+            <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-user' %>
+          <% end %>
           <p class="card-price"><%= suit.price_per_day %> €</p>
           <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
         </div>
