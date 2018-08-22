@@ -1,37 +1,44 @@
-<h2>Sign up</h2>
+<div class="new-wrapper" id="background-image-new" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/dnddzhvyj/image/upload/v1534845337/suit-banner.jpg');">
+  <div class="container flex-container">
+    <div class="flex-item">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <h2>Sign up</h2>
 
-  <div class="form-inputs form-suit-shared">
-    <%= f.input :email,
-                required: true,
-                autofocus: true ,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :first_name,
-                required: true,
-                input_html: { autocomplete: "First-name" } %>
-    <%= f.input :last_name,
-                required: true,
-                input_html: { autocomplete: "Last-name" } %>
-    <%= f.input :phone,
-                required: true,
-                input_html: { autocomplete: "Phone number" } %>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :photo,
-                required: false %>
-    <%= f.input :photo_cache, as: :hidden %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs form-suit-shared">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true ,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :first_name,
+                      required: true,
+                      input_html: { autocomplete: "First-name" } %>
+          <%= f.input :last_name,
+                      required: true,
+                      input_html: { autocomplete: "Last-name" } %>
+          <%= f.input :phone,
+                      required: true,
+                      input_html: { autocomplete: "Phone number" } %>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :photo,
+                      required: false %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up" %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+   </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
