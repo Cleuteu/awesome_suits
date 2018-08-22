@@ -16,6 +16,7 @@
     <p>Size: <%= @suit.size %></p>
     <p>Description: <%= @suit.description %></p>
     <p>Price: <%= @suit.price_per_day %></p>
+    <p>Address: <%= @suit.address %></p>
 
     <% if @suit.photo.url.nil? %>
       <%= cl_image_tag("placeholder090821.png", width: 200, height: 300, crop: :fill) %>
