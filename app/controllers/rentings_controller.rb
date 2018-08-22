@@ -6,6 +6,7 @@ class RentingsController < ApplicationController
     @renting = Renting.new(renting_params)
     @renting.user_id = current_user.id
     @renting.suit_id = @suit.id
+    authorize @renting
 
     if @renting.save
       redirect_to suit_path(@suit)

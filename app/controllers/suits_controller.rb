@@ -7,9 +7,15 @@ class SuitsController < ApplicationController
   end
 
   def show
-    @rentings = Renting.all
     @renting = Renting.new
     @renting.suit = @suit
+    @rentings = Renting.where(suit_id: @suit.id)
+    @markers = @rentings.map do |renting|
+      {
+        from: renting.start_date,
+        to: renting.end_date
+      }
+    end
     authorize @suit
   end
 
