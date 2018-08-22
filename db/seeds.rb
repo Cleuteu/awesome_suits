@@ -29,6 +29,7 @@ url_user = ['https://vignette.wikia.nocookie.net/peaky-blinders/images/9/93/Tomm
             'https://www.101greatgoals.com/wp-content/uploads/2016/05/Riberyeyegouge.jpg'
 ]
 
+
 i = 9
 10.times do
   user = User.new(email: Faker::Internet.email,

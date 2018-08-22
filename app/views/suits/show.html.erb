@@ -25,14 +25,17 @@
     <h3>This suit is not available to this dates : </h3>
     <% @rentings.each do |renting| %>
     <ul>
-      <% if renting.suit_id == @suit.id %>
-        <li>
-          <%= renting.start_date %> to <%= renting.end_date %>
-          <%= link_to 'Delete', renting, method: :delete, data: { confirm: 'Are you sure?' }   %>
-        </li>
+    <% if renting.suit_id == @suit.id %>
+      <li>
+        <%= renting.start_date %> to <%= renting.end_date %>
+        <% if policy(renting).destroy? %>
+          <%= link_to "(delete)", suit_path(@suit),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </li>
       <% end %>
     </ul>
-    <% end %>
 
     <%= render 'formrenting', renting: @renting %>
   </div>
