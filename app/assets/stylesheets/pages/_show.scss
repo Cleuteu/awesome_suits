@@ -15,9 +15,43 @@
 // .banner-under-navbar {
 //   margin-top: -70px;
 // }
-.left {
-  flex: 1;
+.show-container {
+  display: flex
 }
-.right {
-  width: 386px;
+
+.show-left {
+  flex: 300px;
+}
+.show-right {
+  width: 1;
+}
+
+.description-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 40px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+  color: black;
+  font-weight: bold;
+  }
+  h3 {
+  color: black;
+  font-weight: lighter;
+  font-size: 20px;
+  }
+}
+
+.description-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
 }
