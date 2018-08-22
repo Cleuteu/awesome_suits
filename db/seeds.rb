@@ -32,7 +32,7 @@ url_user = ['https://vignette.wikia.nocookie.net/peaky-blinders/images/9/93/Tomm
 
 first_names_users = ['Tommy', 'David', 'Gabriel', 'Barney', 'James', 'Dodo', 'Francois', 'Baby', 'Medor', 'Frank']
 last_names_users = ['Shelby', 'Beckham', 'Macht', 'Stinson', 'Bond', 'La Saumur', 'Fillon', 'Goodboy', 'Ribery']
-suits_names = ['The Grace', 'The soccer suit', 'Very class suit for gentleman', 'How I will **** your mother', 'Suit shaken, not stirred', 'Le Nafissatou',
+suits_names = ['The Grace', 'The soccer suit', 'Gentleman\'s suit', 'How I will **** your mother', 'Suit shaken, not stirred', 'Le Nafissatou',
                 '#rendsl\'argent', 'Impress your mom', 'Le wouf', 'Le kostume classe tmtc']
 
 suits_address = [ '64, rue de la Hulotais SAINT-QUENTIN france',
