@@ -1,13 +1,21 @@
-  <div class="col-offset-md-3 col-md-6">
+  <div class="">
     <h1> Rent this awesome suit </h1>
     <div
       id="renting-form-div"
       data-rentings="<%= @markers.to_json %>"
     >
-      <%= simple_form_for [@suit, @renting] do |f| %>
-        <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
-        <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
-        <%= f.submit "Reserve this suit", class: "btn btn-success" %>
+      <%= simple_form_for [@suit, @renting], html: { class: "" } do |f| %>
+        <div class="row">
+            <div class="col-xs-12 col-md-5">
+              <%= f.input :start_date, as: :string, input_html: {class: "datepicker date-holder"}, label:false %>
+            </div>
+            <div class="col-xs-12 col-md-5">
+              <%= f.input :end_date, as: :string, input_html: {class: "datepicker date-holder"}, label:false %>
+            </div>
+            <div class="col-xs-12 col-md-2">
+              <%= f.submit "Reserve this suit", class: "btn btn-success" %>
+            </div>
+        </div>
       <% end %>
     </div>
     <div>
