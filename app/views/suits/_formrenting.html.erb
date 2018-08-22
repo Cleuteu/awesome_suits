@@ -7,16 +7,16 @@
     >
       <%= simple_form_for [@suit, @renting], html: { class: "" } do |f| %>
         <div class="row">
-            <div class="col-xs-12 col-md-5">
+            <div class="col-xs-12 col-md-6">
               <%= f.input :start_date, as: :string, input_html: {class: "datepicker date-holder"}, label:false %>
             </div>
-            <div class="col-xs-12 col-md-5">
+            <div class="col-xs-12 col-md-6">
               <%= f.input :end_date, as: :string, input_html: {class: "datepicker date-holder"}, label:false %>
             </div>
-            <div class="col-xs-12 col-md-2">
+        </div>
+            <div class="text-center">
               <%= f.submit "Reserve this suit", class: "btn btn-success" %>
             </div>
-        </div>
       <% end %>
     </div>
     <!-- <div> -->
