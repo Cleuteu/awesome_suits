@@ -1,16 +1,13 @@
-<div class="new-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-offset-md-3 col-md-6">
-        <h1> Edit your suit </h1>
-        <div>
-          <%= render 'form_suit' %>
-        </div>
-        <div>
-          <%= link_to "Back", suits_path, class: 'btn btn-primary' %>
-        </div>
+<div class="new-wrapper" id="background-image-new" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/dnddzhvyj/image/upload/v1534845337/suit-banner.jpg');">
+  <div class="container flex-container">
+    <div class="flex-item">
+      <h3> Edit your suit </h3>
+      <div>
+        <%= render 'form_suit' %>
+      </div>
+      <div id="bouton-back">
+        <%= link_to "Back", suits_path, class: 'btn btn-primary' %>
       </div>
     </div>
   </div>
 </div>
-
