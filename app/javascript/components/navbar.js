@@ -17,7 +17,7 @@ function changeNavbarBackOnHomepage() {
   const banner = document.querySelector('.banner');
   if (path === "/") {
     navbar.classList.add('navbar-wagon-background-transparent');
-    banner.classList.add('navbar-fixed-top');
+    banner.classList.add('banner-under-navbar');
   }
 }
 
