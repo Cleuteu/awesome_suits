@@ -115,12 +115,23 @@ body{
   width: 230px;
   img {
     width: 130px;
-    padding-top: 80px;
+    padding-top: 30px;
+    padding-bottom: 10px;
   }
 }
 
+.wrapper-testimonials {
+  max-width: 300px;
+}
+
+.flex-container-for-testimonials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .testimonial-quote {
-  font-size: 10px;
+  font-size: 14px;
   text-align: center;
   font-style: italic;
   color: rgb(20,20,20);
