@@ -7,7 +7,7 @@
     <%= f.input :size, collection: ["XS", "S", "M", "L", "XL"] %>
     <%= f.input :price_per_day, label: "Price per day in euro" %>
     <%= f.input :address, label: 'Where is the suit?' %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit "Submit", class: "btn btn-success" %>
   <% end %>
