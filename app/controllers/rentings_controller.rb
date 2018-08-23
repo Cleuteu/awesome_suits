@@ -1,5 +1,5 @@
 class RentingsController < ApplicationController
-  before_action :set_renting, only: [:show, :edit, :update, :destroy]
+  before_action :set_renting, only: [:destroy]
 
   def create
     @suit = Suit.find(params[:suit_id])
