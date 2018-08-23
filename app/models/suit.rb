@@ -2,7 +2,7 @@ class Suit < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   belongs_to :user
   has_many :rentings
-  has_many :reviews, through: :suits
+  has_many :reviews
 
   validates :name, presence: true
   validates :color, presence: true
