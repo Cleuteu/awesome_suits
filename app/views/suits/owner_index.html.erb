@@ -15,7 +15,18 @@
             <% end %>
             <div class="top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url2 %>');"></div>
             <div class="bottom">
-              <h1 style="width: 200px;"><%= suit.name %></h1>
+              <h1><%= suit.name %></h1>
+              <div style="display: flex; justify-content: space-between;">
+                <p style="flex-grow: 1;"><%= suit.style %></p>
+                <p style="padding-right: 6px;"><%= suit.reviews.count %> reviews</p>
+                <p style="font-size: 12px;">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </p>
+              </div>
             </div>
           </div>
           <% if suit.user.photo.url.nil? %>
