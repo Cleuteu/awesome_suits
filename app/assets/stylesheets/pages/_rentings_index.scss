@@ -1,3 +1,42 @@
+// GENERAL
+
+.rentings-container {
+  min-height: 100vh;
+}
+
+// NAVTABS
+
+.timeline-nav-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-tabs > li > a {
+  color: black;
+  padding: 10px 15px;
+  font-weight: bold;
+  background: transparent;
+  transition: background 0.3s ease;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-tabs > li.active > a:focus, .nav-tabs > li.active > a {
+  color: black;
+  padding: 10px 15px;
+  font-weight: bold;
+  background: #f7ca18;
+  transition: background 0.3s ease;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+// TIMELINE
+
 // Variables
 $bg-body: #f9f9f9;
 

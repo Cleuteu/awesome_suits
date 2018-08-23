@@ -3,7 +3,8 @@ class RentingsController < ApplicationController
   before_action :set_renting, only: [:show, :destroy]
 
   def index
-    @rentings = policy_scope(Renting).order(created_at: :desc)
+    @rentings = policy_scope(Renting).where(user_id: current_user)
+    @owner_suits = policy_scope(Suit).where(user_id: current_user)
   end
 
   def create
