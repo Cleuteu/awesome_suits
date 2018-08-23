@@ -1,9 +1,9 @@
-<div class="new-wrapper" id="background-image-new" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/dnddzhvyj/image/upload/v1534845337/suit-banner.jpg');">
+<div class="new-wrapper" id="background-image-new">
   <div class="container login-page-container flex-container">
     <div class="flex-item">
-     <h2>Log in</h2>
+     <h2 style="color: black;">Log in</h2>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs form-suit-shared">
+      <div class="form-inputs form-suit-shared" style="color: black;">
         <%= f.input :email,
                     required: false,
                     autofocus: true,

@@ -1,15 +1,6 @@
 <div class="main-container">
 
-  <div class="container" style="margin: 100px 10px 0px 10px;">
-    <div class="search-bar search-bar-index">
-      <%= form_tag suits_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a suit"
-        %>
-      <% end %>
-    </div>
+  <div class="container" style="margin: 51px 20px 35px 0px;">
 
     <div class="row">
       <% @suits.each do |suit| %>
@@ -51,8 +42,16 @@
   </div>
 
   <div class="map-container">
-    <div id="map" data-markers="<%= @markers.to_json %>">
-      </div>
+    <div class="search-bar search-bar-index" style="margin: 0 0 30px 0;">
+      <%= form_tag suits_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a suit"
+        %>
+      <% end %>
+    </div>
+    <div id="map" data-markers="<%= @markers.to_json %>"></div>
   </div>
 
 </div>
