@@ -103,3 +103,26 @@ body{
 .card-link:hover {
   opacity: 0.1;
 }
+
+.container-testimonials {
+  .flex-container-testimonial {
+  display: flex;
+  justify-content: center;
+  }
+}
+
+.card-description-testimonials {
+  width: 230px;
+  img {
+    width: 130px;
+    padding-top: 80px;
+  }
+}
+
+.testimonial-quote {
+  font-size: 10px;
+  text-align: center;
+  font-style: italic;
+  color: rgb(20,20,20);
+
+}
