@@ -1,11 +1,11 @@
 <div class="container">
 
-  <h1 class="text-center" style="margin: 0;">My suits</h1>
+  <!-- <h1 class="text-center">My suits</h1> -->
 
-  <div class="container" style="padding-top: 35px; padding-bottom: 70px;">
+  <div class="container" style="padding-top: 70px; padding-bottom: 70px;">
     <div class="row">
       <% @suits.each do |suit| %>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="wrapper">
           <div class="card-container">
             <% if suit.photo.url.nil? %>
@@ -38,7 +38,7 @@
         </div>
       </div>
       <% end %>
-      <div style="display: flex; align-items: center; justify-content: center; font-size: 128px; width: 290px; height: 510px; margin: auto; overflow: hidden; border-radius: 9px 9px 9px 9px; border: 1px solid; opacity: 0.3; box-shadow: 1px 4px 6px rgba(0,0,0,0.1); transform: scale(0.95); transition: box-shadow 0.5s, transform 0.5s; &:hover{transform: scale(1); box-shadow: 5px 20px 30px rgba(0,0,0,0.2);}">+
+      <div class="blank-photo">+
         <%= link_to new_suit_path, class: 'card-link' do %><% end %></div>
     </div>
   </div>
