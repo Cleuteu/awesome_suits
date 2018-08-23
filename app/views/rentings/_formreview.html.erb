@@ -7,7 +7,7 @@
 
 
 
-<div class="rate-your-order container flex-container">
+<div class="rate-your-order container">
   <h1 class="flex-item">Rate your order</h1>
   <div id="renting-form-div flex-item">
     <%= simple_form_for [@renting, @review] do |f| %>
@@ -19,7 +19,8 @@
           <input type="radio" id="star3" name="rating" value="3" /><label class = "full star-rate" for="star3" title="Meh - 3 stars"></label>
           <input type="radio" id="star2" name="rating" value="2" /><label class = "full star-rate" for="star2" title="Kinda bad - 2 stars"></label>
           <input type="radio" id="star1" name="rating" value="1" /><label class = "full star-rate" for="star1" title="Sucks big time - 1 star"></label>
-        <%= f.input :content, label:'Message' %>
+        </fieldset>
+        <%= f.input :content, label:'Message and rate' %>
         <div class="text-center">
         <%= f.submit "Leave a review", class: "btn yellow-btn" %>
         </div>
