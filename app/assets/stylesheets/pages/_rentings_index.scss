@@ -1,0 +1,206 @@
+// Variables
+$bg-body: #f9f9f9;
+
+$red: #ee4d4d;
+$blue: #2b2e48;
+$primary-color: rgb(247, 202, 24);
+$secondary-color: $blue;
+
+
+// Typography
+$base-font: helvetica, arial, tahoma, verdana;
+$base-font-title: "Dosis", arial, tahoma, verdana;
+
+$base-font-color: #726f77;
+
+// Timeline
+$timeline-color: $primary-color;
+
+
+// Mixins and Placeholders
+%clearfix {
+  &:after, &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    clear: both;
+  }
+}
+
+@mixin prefix($prop, $val) {
+  @each $prefix in '-webkit-', '-moz-', '-ms-', '' {
+    #{$prefix}#{$prop}: $val;
+  }
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.project-name {
+  text-align: center;
+  padding: 10px 0;
+}
+
+
+// Timeline
+#timeline {
+  width: 100%;
+  margin: 30px auto;
+  position: relative;
+  padding: 0 10px;
+  @include prefix(transition, all .4s ease);
+
+  &:before {
+    content:"";
+    width: 3px;
+    height: 100%;
+    background: $timeline-color;
+    left: 1.1%;
+    top: 0;
+    position: absolute;
+  }
+
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+    width: 100%;
+  }
+
+  .timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+    @extend %clearfix;
+
+    .timeline-icon {
+      background: $timeline-color;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0%;
+      overflow: hidden;
+      margin-left: -23px;
+      @include prefix(border-radius, 50%);
+
+      svg {
+        position: relative;
+        top: 14px;
+        left: 14px;
+      }
+    }
+
+    .timeline-content {
+      position: relative;
+      min-height: 220px;
+      width: 70%;
+      background: #fff;
+      @include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
+      @include prefix(border-radius, 0px);
+      @include prefix(transition, all .3s ease);
+
+      .timeline-description {
+        padding: 0px 0px 30px 20px;
+      }
+
+      img {
+        position: absolute;
+        right: 15px;
+      }
+
+      h2 {
+        padding: 15px;
+        background: #DDDDDD;
+        color: #fff;
+        margin: 0;
+        margin-right: -100px;
+
+        font-weight: 300;
+        @include prefix(border-radius, 0);
+      }
+      h3 {
+        color: black;
+        font-size: 20px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 45%;
+        top: 20px;
+        width: 0;
+        height: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left:7px solid $timeline-color;
+      }
+
+      &.right {
+        float: left;
+        margin-left: 56px;
+
+        &:before {
+          content: '';
+          right: 92%;
+          left: inherit;
+          border-left: 0;
+          border-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// Buttons
+.timeline-btn {
+  padding: 5px 15px;
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid lighten($primary-color, 10%);
+  color: lighten($primary-color, 10%);
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 12px;
+  @include prefix(border-radius, 0px);
+  @include prefix(transition, background .3s ease);
+  @include prefix(box-shadow, 2px 2px 0 lighten($primary-color, 10%));
+
+  &:hover {
+    box-shadow: none ;
+    top: 2px;
+    left: 2px;
+    @include prefix(box-shadow, 2px 2px 0 transparent);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #timeline {
+    margin: 30px;
+    padding: 0px;
+    width: 90%;
+    &:before {
+      left: 0;
+    }
+
+    .timeline-item {
+      .timeline-content {
+        width: 90%;
+        float: right;
+
+        &:before, &.right:before {
+          left: 10%;
+          margin-left: -6px;
+          border-left: 0;
+          border-right: 0;
+        }
+      }
+
+      .timeline-icon {
+        left: 0;
+      }
+    }
+  }
+}
