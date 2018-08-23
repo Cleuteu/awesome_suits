@@ -1,12 +1,9 @@
-body{
-  background: #F5F5F5;
-}
 .wrapper{
-  width: 290px;
-  height: 510px;
+  width: 280px;
+  height: 500px;
   margin: auto;
   overflow: hidden;
-  border-radius: 1px;
+  border-radius: 2px;
   transform: scale(0.95);
   transition: box-shadow 0.5s, transform 0.5s;
   &:hover{
@@ -16,7 +13,7 @@ body{
   .card-container{
     width:100%;
     height:100%;
-    background: #F5F5F5;
+    background: white;
     .top{
       height: 85%;
       background: no-repeat center;
@@ -68,9 +65,10 @@ body{
   left: 12px;
   font-size: 16px;
   background-color: white;
-  opacity: 0.67;
+  opacity: 0.75;
   border-radius: 4px;
   padding: 6px;
+  // letter-spacing: 1px;
 }
 // .card-description {
 //   position: absolute;

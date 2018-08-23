@@ -1,57 +1,57 @@
-<% if @suit.photo.url.nil? %>
-  <% url2 = cl_image_tag("placeholder090821.png") %>
-<% else %>
-  <% url2 = cl_image_tag @suit.photo %>
-<% end %>
+<div class="container" style="margin-bottom: 70px;">
 
+  <div style="display:flex;">
 
-<div class="container" style="margin-bottom: 70px; display: flex;">
-<% @reviews.each do |review| %>
-  <% if Renting.find(review.renting_id).suit_id == @suit.id %>
-    <% User.find(review.user_id).first_name %> <% User.find(review.user_id).last_name %>
-    Title : <%= review.title %>
-    Rate : <%= review.rate %>
-    <%= review.content %>
-  <% end %>
-<% end %>
-  <div class="row">
-    <div class="show-left col-xs-4">
-      <div class="wrapper" style="height: 525px">
-        <div class="card-container">
-          <% if @suit.photo.url.nil? %>
-            <% url2 = cl_image_path('placeholder090821.png') %>
-          <% else %>
-            <% url2 = cl_image_path @suit.photo %>
-          <% end %>
-          <div class="top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url2 %>');"></div>
+    <div class="show-image">
+      <div class="card-container">
+        <% if @suit.photo.url.nil? %>
+          <% url2 = cl_image_path('placeholder090821.png') %>
+        <% else %>
+          <% url2 = cl_image_path @suit.photo %>
+        <% end %>
+        <div class="top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= url2 %>');">
         </div>
       </div>
     </div>
 
-    <div class="show-right col-xs-8">
-      <div class="description-container">
-          <div class="col-xs-6">
-            <h2><%= @suit.name %></h2>
-            <h3>By <%= User.find(@suit.user_id).first_name %> <%= User.find(@suit.user_id).last_name %> </h3>
-          </div>
-          <div class="col-xs-6 description-content">
-            <span>
-              <p>Price:</p>
-              <p><%= @suit.price_per_day %> € / day</p>
-            </span>
-            <span>
-              <p>Size:</p>
-              <p><%= @suit.size %></p>
-            </span>
-            <span>
-              <p>Color:</p>
-              <p><%= @suit.color %></p>
-            </span>
-          </div>
-      </div>
+    <div class="description-container" style="flex-grow: 1;">
+      <h1 style="margin: 0;"><%= @suit.name %></h1>
+      <h3>
+        By <%= User.find(@suit.user_id).first_name %> <%= User.find(@suit.user_id).last_name %>
+      </h3>
+      <br>
+      <p><%= @suit.price_per_day %> € / day</p>
+      <p>Size: <%= @suit.size %></p>
+      <p>Color: <%= @suit.color %></p>
+      <br>
+      <p style="font-weight: lighter;">Tuxedo is 100% super-fine Italian merino wool</p>
+      <p style="font-weight: lighter;">Jacket has One-button closure</p>
+      <p style="font-weight: lighter;">Jacket has 100% silk satin shawl collar</p>
+      <p style="font-weight: lighter;">This complete outfit includes 6 items</p>
+    </div>
+
+    <div style="padding-top: 10px;">
       <%= render 'formrenting', renting: @renting %>
     </div>
+
   </div>
+
+  <h3 style="color: black">Reviews</h3>
+
+    <% @reviews.each do |review| %>
+      <% if Renting.find(review.renting_id).suit_id == @suit.id %>
+        <% User.find(review.user_id).first_name %> <% User.find(review.user_id).last_name %>
+        <p><%= review.title %>
+          <i class="fas fa-star" style="font-size: 12px;"></i>
+          <i class="fas fa-star" style="font-size: 12px;"></i>
+          <i class="fas fa-star" style="font-size: 12px;"></i>
+          <i class="far fa-star" style="font-size: 12px;"></i>
+          <i class="far fa-star" style="font-size: 12px;"></i>
+        </p>
+        <p style="font-weight: lighter"><%= review.content %></p>
+      <% end %>
+    <% end %>
+
 </div>
 
 <div class="container" style="padding-top: 0; margin-bottom: 70px;">

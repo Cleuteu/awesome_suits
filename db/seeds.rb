@@ -2,6 +2,7 @@ puts 'Cleaning database...'
 Renting.destroy_all
 User.destroy_all
 Suit.destroy_all
+Review.destroy_all
 
 puts 'Creating users and suits...'
 
@@ -27,7 +28,7 @@ url_user = ['https://vignette.wikia.nocookie.net/peaky-blinders/images/9/93/Tomm
             'https://cache.magicmaman.com/data/photo/w1000_ci/4w/bain-bebe-baignoire.jpg',
             'https://static-cdn.jtvnw.net/jtv_user_pictures/hsdogdog-profile_image-5550ade194780dfc-300x300.jpeg',
             'https://www.101greatgoals.com/wp-content/uploads/2016/05/Riberyeyegouge.jpg'
-]
+          ]
 
 
 first_names_users = ['Tommy', 'David', 'Gabriel', 'Barney', 'James', 'Dodo', 'Francois', 'Baby', 'Medor', 'Frank']
@@ -45,8 +46,7 @@ suits_address = [ '64, rue de la Hulotais SAINT-QUENTIN france',
                   '2 Rue Paul Vaillant Couturier, Argenteuil, France',
                   '15 Rue Marc Massy, Saint-Germain, France',
                   '3 Rue Maréchal Foch, Perpignan, France'
-
-]
+                ]
 
 i = 9
 10.times do
@@ -60,6 +60,7 @@ i = 9
   suit = Suit.new(name: suits_names[i],
                 color: Faker::Color.color_name,
                 price_per_day: Faker::Number.between(35, 180),
+                style: [ 'Classic suit', 'Elegant tuxedo', 'Eccentic suit'].sample,
                 size: ['S', 'M', 'L', 'XL'].sample,
                 address: suits_address[i])
   suit.remote_photo_url = url_suit[i]

@@ -23,6 +23,8 @@ class RentingsController < ApplicationController
   def show
     authorize @renting
     @review = Review.new
+    @message = Message.new
+    @messages = Message.where(renting_id: params[:id]).reverse_order
   end
 
   def destroy
@@ -34,7 +36,7 @@ class RentingsController < ApplicationController
   private
 
   def renting_params
-    params.require(:renting).permit(:start_date, :end_date, :user_id, :suit_id)
+    params.require(:renting).permit(:start_date, :end_date)
   end
 
   def set_renting
