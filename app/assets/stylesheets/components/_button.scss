@@ -1,7 +1,7 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css);
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-.yello-btn {
+.yellow-btn {
   color: black;
   padding: 10px 15px;
   font-weight: bold;
@@ -11,9 +11,10 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  border-radius: 0;
 }
 
-.yello-btn:hover {
+.yellow-btn:hover {
   opacity: 1;
   text-decoration: none;
   color: rgb(255, 255, 255);
