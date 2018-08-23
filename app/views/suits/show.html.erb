@@ -1,4 +1,4 @@
-<div class="container" style="margin-bottom: 70px;">
+<div class="container" style="margin-top: 105px; margin-bottom: 35px;">
 
   <div style="display:flex;">
 
@@ -37,8 +37,8 @@
 
   </div>
 
-  <h3 style="color: black; padding: 0px 70px;">Reviews</h3>
-
+  <div style="padding: 20px 70px;">
+    <h3 style="color: black; margin-bottom: 20px;">Reviews</h3>
     <% @reviews.each do |review| %>
       <% if Renting.find(review.renting_id).suit_id == @suit.id %>
         <% User.find(review.user_id).first_name %> <% User.find(review.user_id).last_name %>
@@ -53,6 +53,7 @@
         <p style="font-weight: lighter"><%= review.content %></p>
       <% end %>
     <% end %>
+  </div>
 
 </div>
 

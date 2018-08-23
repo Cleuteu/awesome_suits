@@ -1,15 +1,13 @@
-<div class="container rentings-container">
-  <div>
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs timeline-nav-flex" role="tablist">
-      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="yellow-background">My rentings history</a></li>
-      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My owner history</a></li>
-    </ul>
+<div class="container rentings-container" style="margin-top: 70px;">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs timeline-nav-flex" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="yellow-background">My rentings history</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My owner history</a></li>
+  </ul>
 
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="home"> <%= render 'history_renter' %> </div>
-      <div role="tabpanel" class="tab-pane" id="profile"> <%= render 'history_owner' %> </div>
-    </div>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home"> <%= render 'history_renter' %> </div>
+    <div role="tabpanel" class="tab-pane" id="profile"> <%= render 'history_owner' %> </div>
   </div>
 </div>
