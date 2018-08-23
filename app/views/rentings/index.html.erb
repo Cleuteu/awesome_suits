@@ -1,11 +1,4 @@
 <div class="container">
-  <% @rentings.each do |renting| %>
-    <%= User.find(renting.user_id).first_name %>
-    <%= User.find(renting.user_id).last_name %>
-    <%= Suit.find(renting.suit_id).name %>
-  <% end %>
-
-<div class="container">
   <h1 class="project-name">My rentings timeline</h1>
   <div id="timeline">
     <% @rentings.each do |renting| %>
@@ -21,13 +14,30 @@
           </svg>
         </div>
         <div class="timeline-content right">
-          <h2>Suit rented: <%= Suit.find(renting.suit_id).name %></h2>
-          <h3>Rented from: <%= renting.suit.user.first_name %> <%= renting.suit.user.last_name %></h3>
-          <p>
-            <%= renting.start_date %>
-            <%= renting.end_date %>
-          </p>
-          <%= link_to "View my renting", renting_path(renting.id), class: 'btn'%>
+          <div class="row">
+            <div class="col-xs-9">
+              <h2>Suit rented: <%= Suit.find(renting.suit_id).name %></h2>
+              <div class="timeline-description">
+                <h3>Rented from: <%= renting.suit.user.first_name %> <%= renting.suit.user.last_name %></h3>
+                <p>
+                  Start date: <%= renting.start_date %>
+                  -
+                  End date: <%= renting.end_date %>
+                </p>
+                <%= link_to "View my renting", renting_path(renting.id), class: 'yello-btn'%>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <% if renting.suit.photo.url.nil? %>
+                <% url2 = cl_image_tag('placeholder090821.png',
+        width: 150, height: 200, crop: :fill) %>
+              <% else %>
+                <% url2 = cl_image_tag(renting.suit.photo,
+        width: 160, height: 220, crop: :fill) %>
+              <% end %>
+            <%= url2 %>
+            </div>
+          </div>
         </div>
       </div>
     <% end %>

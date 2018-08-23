@@ -1,5 +1,3 @@
-@import "https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700";
-
 // Variables
 $bg-body: #f9f9f9;
 
@@ -95,20 +93,36 @@ $timeline-color: $primary-color;
     }
 
     .timeline-content {
-      width: 80%;
+      position: relative;
+      min-height: 220px;
+      width: 70%;
       background: #fff;
-      padding: 20px;
       @include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
-      @include prefix(border-radius, 5px);
+      @include prefix(border-radius, 0px);
       @include prefix(transition, all .3s ease);
+
+      .timeline-description {
+        padding: 0px 0px 30px 20px;
+      }
+
+      img {
+        position: absolute;
+        right: 15px;
+      }
 
       h2 {
         padding: 15px;
-        background: $timeline-color;
+        background: #DDDDDD;
         color: #fff;
-        margin: -20px -20px 0 -20px;
+        margin: 0;
+        margin-right: -100px;
+
         font-weight: 300;
-        @include prefix(border-radius, 3px 3px 0 0);
+        @include prefix(border-radius, 0);
+      }
+      h3 {
+        color: black;
+        font-size: 20px;
       }
 
       &:before {
@@ -132,7 +146,7 @@ $timeline-color: $primary-color;
           right: 92%;
           left: inherit;
           border-left: 0;
-          border-right: 7px solid $timeline-color;
+          border-right: 0;
         }
       }
     }
@@ -140,7 +154,7 @@ $timeline-color: $primary-color;
 }
 
 // Buttons
-.btn {
+.timeline-btn {
   padding: 5px 15px;
   text-decoration: none;
   background: transparent;
@@ -150,7 +164,7 @@ $timeline-color: $primary-color;
   position: relative;
   text-transform: uppercase;
   font-size: 12px;
-  @include prefix(border-radius, 5px);
+  @include prefix(border-radius, 0px);
   @include prefix(transition, background .3s ease);
   @include prefix(box-shadow, 2px 2px 0 lighten($primary-color, 10%));
 
@@ -180,7 +194,7 @@ $timeline-color: $primary-color;
           left: 10%;
           margin-left: -6px;
           border-left: 0;
-          border-right: 7px solid $timeline-color;
+          border-right: 0;
         }
       }
 
