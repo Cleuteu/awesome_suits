@@ -20,9 +20,10 @@
         By <%= User.find(@suit.user_id).first_name %> <%= User.find(@suit.user_id).last_name %>
       </h3>
       <br>
-      <p><%= @suit.price_per_day %> € / day</p>
+      <p>£ <%= @suit.price_per_day %> / day</p>
       <p>Size: <%= @suit.size %></p>
-      <p>Color: <%= @suit.color %></p>
+      <p class="dot" style="background-color: <%= @suit.color.downcase %>;"></p>
+      <br>
       <br>
       <p style="font-weight: lighter;">Tuxedo is 100% super-fine Italian merino wool</p>
       <p style="font-weight: lighter;">Jacket has One-button closure</p>
@@ -36,17 +37,18 @@
 
   </div>
 
-  <h3 style="color: black">Reviews</h3>
+  <h3 style="color: black; padding: 0px 70px;">Reviews</h3>
 
     <% @reviews.each do |review| %>
       <% if Renting.find(review.renting_id).suit_id == @suit.id %>
         <% User.find(review.user_id).first_name %> <% User.find(review.user_id).last_name %>
         <p><%= review.title %>
-          <i class="fas fa-star" style="font-size: 12px;"></i>
-          <i class="fas fa-star" style="font-size: 12px;"></i>
-          <i class="fas fa-star" style="font-size: 12px;"></i>
-          <i class="far fa-star" style="font-size: 12px;"></i>
-          <i class="far fa-star" style="font-size: 12px;"></i>
+          <% review.rate.to_i.times do %>
+            <i class="fas fa-star" style="font-size: 12px;"></i>
+          <% end %>
+          <% (5 - review.rate.to_i).times do %>
+            <i class="far fa-star" style="font-size: 12px;"></i>
+          <% end %>
         </p>
         <p style="font-weight: lighter"><%= review.content %></p>
       <% end %>

@@ -1,3 +1,11 @@
+.dot {
+  height: 25px;
+  width: 25px;
+  // background-color: #bbb;
+  border: 1px solid rgba(0, 0, 0, .5);
+  border-radius: 50%;
+  display: inline-block;
+}
 .show-image {
   width: 300px;
   height: 500px;
