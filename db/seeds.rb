@@ -1,10 +1,11 @@
 puts 'Cleaning database...'
-Renting.destroy_all
-User.destroy_all
-Suit.destroy_all
 Review.destroy_all
+Message.destroy_all
+Renting.destroy_all
+Suit.destroy_all
+User.destroy_all
 
-puts 'Creating users and suits...'
+puts 'Creating users, suits, rentings and messages...'
 
 url_suit = ['https://vignette.wikia.nocookie.net/peaky-blinders/images/e/e4/Tommy4.jpg/revision/latest?cb=20171102223157',
       'https://www.tom-murphy.ie/wp-content/uploads/2017/06/Paris-Navy-4-.jpg',
@@ -48,10 +49,20 @@ suits_address = [ '64, rue de la Hulotais SAINT-QUENTIN france',
                   '3 Rue Maréchal Foch, Perpignan, France'
                 ]
 
+message_content1 = 'Bonjour, je dois participer à l\'enterrement du poisson poisson rouge du meilleur ami de mon oncle par alliance,
+                   et j\ai vraiment la flemme de dépenser un costume à 500 balles pour ça... Le votre semble très adapté pour ce type
+                   d\événement. Est-il toujours disponible?'
+
+message_content2 = 'Bonjour Monsieur,\n Je l\'ai moi-même porté la semaine dernière à la bar mitzvah de mon chien, il est en effet du plus bel effet
+                    pour ce type de manifestation. Il est toujours disponible et je valide votre demande de réservation.'
+
+review1_content = 'Ce costume sentait vraiment mauvais... je l\'avais pris pour un rendez-vous Tinder, je peux vous dire que je suis rentré tout seul!'
+review2_content = 'Je loue ce costume très régulièrement. Je me suis aperçu qu\'il me donner une certaine chance, depuis que je le met, tous mes problèmes ont été résolus! Je conseille'
+
 i = 9
 10.times do
   user = User.new(email: Faker::Internet.email,
-              password: Faker::Number.number(7),
+              password: 'azerty',
               first_name: first_names_users[i],
               last_name: last_names_users[i],
               phone: "06#{Faker::Number.number(8)}" )
@@ -66,13 +77,97 @@ i = 9
   suit.remote_photo_url = url_suit[i]
   suit.user_id = user.id
   suit.save!
+
+  renting1 = Renting.new(start_date: Date.new(2018,8,28), end_date: Date.new(2018,8,30))
+  renting2 = Renting.new(start_date: Date.new(2018,8,26), end_date: Date.new(2018,8,27))
+
+  renting1.suit = suit
+  renting2.suit = suit
+
+  renting1.user = user
+  renting2.user = user
+
+  renting1.save!
+  renting2.save!
+
+  review1 = Review.new(date: Date.new(2018,8,16), title: 'Sentait mauvais...', rate: 2, content: review1_content)
+  review2 = Review.new(date: Date.new(2018,8,19), title: 'Ce costume a changé ma vie!', rate: 5, content: review1_content)
+
+  review1.renting = renting1
+  review2.renting = renting1
+
+  review1.user = user
+  review2.user = user
+
+  review1.save!
+  review2.save!
+
+
+  message1 = Message.new(content:message_content1, date: Date.new(2018,8,16))
+  message2 = Message.new(content: message_content2, date: Date.new(2018,8,20))
+
+  message1.renting = renting1
+  message2.renting = renting1
+
+  message1.user = user
+  message2.user = user
+
+  message1.save!
+  message2.save!
+
   i -= 1
 end
 
-puts 'Creating users Thomas, Eugene, Yoann and Alex'
-User.create!(email: 'marichalalex@yahoo.fr', first_name: 'Alex', last_name: 'Marichal', password: 'azerty')
-User.create!(email: 'e.ernoult@gmail.com', first_name: 'Eugene', last_name: 'Ernoult', password: 'azerty')
-User.create!(email: 'thomas.pouillevet@gmail.com', first_name: 'Thomas', last_name: 'Pouillevet', password: 'azerty')
-User.create!(email: 'yoann.saunier@gmail.com', first_name: 'Yoann', last_name: 'Saunier', password: 'azerty')
+puts 'Creating test user'
+user = User.new(email: 'test@test.com', first_name: 'Alex', last_name: 'Marichal', password: '123456')
+user.save!
+
+suit = Suit.new(name: 'Un bon gros suit',
+              color: Faker::Color.color_name,
+              price_per_day: Faker::Number.between(35, 180),
+              style: [ 'Classic suit', 'Elegant tuxedo', 'Eccentic suit'].sample,
+              size: ['S', 'M', 'L', 'XL'].sample,
+              address: '16 villa gaudelet Paris')
+suit.remote_photo_url = 'https://www.opposuits.com/media/catalog/product/cache/16/image/550x/925f46717e92fbc24a8e2d03b22927e1/o/s/osui_shineapple_website_rgb_ls_1.jpg'
+suit.user = user
+
+suit.save!
+
+renting1 = Renting.new(start_date: Date.new(2018,8,28), end_date: Date.new(2018,8,30))
+renting2 = Renting.new(start_date: Date.new(2018,8,26), end_date: Date.new(2018,8,27))
+
+renting1.suit = suit
+renting2.suit = suit
+
+renting1.user = user
+renting2.user = user
+
+renting1.save!
+renting2.save!
+
+review1 = Review.new(date: Date.new(2018,8,16), title: 'Sentait mauvais...', rate: 2, content: review1_content)
+review2 = Review.new(date: Date.new(2018,8,19), title: 'Ce costume a changé ma vie!', rate: 5, content: review1_content)
+
+review1.renting = renting1
+review2.renting = renting1
+
+review1.user = user
+review2.user = user
+
+review1.save!
+review2.save!
+
+
+message1 = Message.new(content:message_content1, date: Date.new(2018,8,16))
+message2 = Message.new(content: message_content2, date: Date.new(2018,8,20))
+
+message1.renting = renting1
+message2.renting = renting1
+
+message1.user = user
+message2.user = user
+
+message1.save!
+message2.save!
 
 puts 'Finished!'
