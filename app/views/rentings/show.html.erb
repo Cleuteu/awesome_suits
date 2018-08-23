@@ -1,4 +1,19 @@
 
 <div class="container">
-  <%= render 'formreview', review: @review %>
+  <div class="raw">
+    <%= render 'formreview', review: @review %>
+  </div>
+  <div class="raw">
+    <%= render 'formmessage', message: @message %>
+
+    <ul>
+      <% @messages.each do |message| %>
+        <li>
+            <%= User.find(message.user_id).first_name %>
+            <%= message.date.strftime "%Y-%m-%d %H:%M" %>
+            <%= message.content %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

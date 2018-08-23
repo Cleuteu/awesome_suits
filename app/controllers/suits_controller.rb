@@ -74,7 +74,7 @@ class SuitsController < ApplicationController
   private
 
   def suit_params
-    params.require(:suit).permit(:user_id, :color, :description, :style, :size, :name, :photo, :price_per_day, :address)
+    params.require(:suit).permit(:color, :description, :style, :size, :name, :photo, :price_per_day, :address)
   end
 
   def set_suit

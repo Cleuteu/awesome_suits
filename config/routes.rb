@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :rentings, only: [:index, :show, :destroy] do
     resources :reviews, only: [:create]
+    resources :messages, only:[:create, :show]
   end
 
   resources :reviews, only: [:show, :destroy]
