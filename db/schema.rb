@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_23_094358) do
+ActiveRecord::Schema.define(version: 2018_08_23_123832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "messages", force: :cascade do |t|
+    t.date "date"
+    t.text "content"
+    t.bigint "renting_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["renting_id"], name: "index_messages_on_renting_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
 
   create_table "rentings", force: :cascade do |t|
     t.bigint "user_id"
@@ -72,6 +83,8 @@ ActiveRecord::Schema.define(version: 2018_08_23_094358) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "messages", "rentings"
+  add_foreign_key "messages", "users"
   add_foreign_key "rentings", "suits"
   add_foreign_key "rentings", "users"
   add_foreign_key "reviews", "rentings"
