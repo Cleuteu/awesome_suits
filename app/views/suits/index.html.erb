@@ -1,6 +1,6 @@
 <div class="main-container">
 
-  <div class="container" style="margin: 0px 10px 20px 10px;">
+  <div class="container" style="margin: 0px 10px 0px 10px;">
     <div class="row">
       <% @suits.each do |suit| %>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" style="margin-bottom: 10px;">
@@ -15,8 +15,8 @@
             <div class="bottom">
               <h1><%= suit.name %></h1>
               <div style="display: flex; justify-content: space-between;">
-                <p style="flex-grow: 1;">Tuxedo</p>
-                <p style="padding-right: 6px;">9 reviews</p>
+                <p style="flex-grow: 1;"><%= suit.style %></p>
+                <p style="padding-right: 6px;"><%= suit.reviews.count %> reviews</p>
                 <p style="font-size: 12px;">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
