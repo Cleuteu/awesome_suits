@@ -1,8 +1,9 @@
+<div class="container" style="margin: 35px 0;">
 <p>
   <% if @owner_suits.first.nil? %>
     <p>You don't have any suit on the platform</p>
   <% else %>
-    <h1 class="project-name">My rentings timeline</h1>
+    <!-- <h1 class="project-name">My rentings timeline</h1> -->
       <div id="timeline">
         <% @owner_suits.each do |suit| %>
           <% suit.rentings.each do |renting| %>
@@ -49,3 +50,4 @@
       </div>
   <% end %>
 </p>
+</div>
