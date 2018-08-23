@@ -4,7 +4,17 @@
 
     <p><span id="banner-typed-text">Not all superheroes wear capes</span></p>
 
-    <%= link_to "Rent a suit now", suits_path, class: "btn btn-sm yellow-btn" %>
+<!--     <%= link_to "Rent a suit now", suits_path, class: "btn btn-sm yellow-btn" %>
+ -->
+    <div class="search-bar search-bar-home">
+      <%= form_tag suits_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a suit perfect for me"
+        %>
+      <% end %>
+    </div>
 
   </div>
 </div>
