@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @review.date = DateTime.now.to_date
     @review.save!
     authorize @review
-    redirect_to suit_path(@suit)
+    redirect_to suit_path(@renting.suit_id)
   end
 
   private

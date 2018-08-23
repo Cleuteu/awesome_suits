@@ -1,0 +1,9 @@
+<div class="container">
+  <% @rentings.each do |renting| %>
+    <%= User.find(renting.user_id).first_name %>
+    <%= User.find(renting.user_id).last_name %>
+    <%= Suit.find(renting.suit_id).name %>
+  <% end %>
+
+</div>
+
