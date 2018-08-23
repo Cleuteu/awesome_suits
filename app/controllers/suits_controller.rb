@@ -18,6 +18,7 @@ class SuitsController < ApplicationController
     @renting = Renting.new
     @renting.suit = @suit
     @rentings = Renting.where(suit_id: @suit.id)
+    @reviews = Review.all
     @rentings_dates = @rentings.map do |renting|
       {
         from: renting.start_date,
