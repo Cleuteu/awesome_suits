@@ -1,10 +1,32 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/dnddzhvyj/image/upload/v1534845337/suit-banner.jpg');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(35,35,35,0.6) 50%), url('https://res.cloudinary.com/dnddzhvyj/image/upload/v1534845337/suit-banner.jpg');">
   <div class="banner-content">
     <h1>Suit-up</h1>
 
     <p><span id="banner-typed-text">Not all superheroes wear capes</span></p>
-    <%= link_to "Rent a suit now", suits_path, class: "btn btn-medium btn-lg" %>
+
+    <%= link_to "Rent a suit now", suits_path, class: "btn btn-sm yello-btn" %>
+
   </div>
 </div>
-<div class="container home-container">
+  <!-- Testimonials -->
+  <div class="container" style="padding: 0 200px">
+  <div class="flex-container-for-testimonials">
+
+    <div class="card-description-testimonials text-center flex-item">
+      <%= link_to image_tag("logo-camion.png", border: 0), {class: 'testimonial-img'}%>
+      <p class="testimonial-quote">"The finest suits in the World"</p>
+    </div>
+
+    <div class="card-description-testimonials text-center flex-item">
+      <%= link_to image_tag("logo-gq.png", border: 0), {class: 'testimonial-img'}%>
+      <p class="testimonial-quote">"The best a man can get"</p>
+    </div>
+
+
+
+    <div class="card-description-testimonials text-center flex-item">
+      <%= link_to image_tag("logo-monsieur.png", border: 0), {class: 'testimonial-img'}%>
+      <p class="testimonial-quote">"We do approve. You should too."</p>
+    </div>
+  </div>
 </div>

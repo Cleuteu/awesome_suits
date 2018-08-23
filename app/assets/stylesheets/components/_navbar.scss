@@ -1,6 +1,6 @@
 /* Main navbar */
 .navbar-wagon {
-  background: rgba(0,0,0, 0.5);
+  background: rgba(15,15,15, 1);
   transition: all 0.5s ease;
   height: 70px;
   padding: 0px 30px;
@@ -11,11 +11,11 @@
 }
 
 .navbar-wagon-background-transparent {
-  background-color: transparent;
+  background-color: black;
 }
 
 .navbar-wagon-black {
-  color: rgba(0,0,0,0.8);
+  color: rgba(0,0,0,1);
 }
 
 /* Logo */
