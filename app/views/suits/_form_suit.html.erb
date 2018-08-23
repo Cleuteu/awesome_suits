@@ -1,10 +1,10 @@
 <div style="font-weight: lighter;">
   <%= simple_form_for @suit do |f| %>
     <%= f.input :name, label: "Name your suit"  %>
-    <%= f.input :color %>
+    <%= f.input :color, collection: ["Blue", "Black", "Red", "Yellow", "Green", "Purple"] %>
     <%= f.input :description, label: "Please give a short description"  %>
-    <%= f.input :style %>
-    <%= f.input :size %>
+    <%= f.input :style, collection: ["Classic suit", "Elegant tuxedo", "Eccentic suit"] %>
+    <%= f.input :size, collection: ["XS", "S", "M", "L", "XL"] %>
     <%= f.input :price_per_day, label: "Price per day in euro" %>
     <%= f.input :address, label: 'Where is the suit?' %>
     <%= f.input :photo %>
