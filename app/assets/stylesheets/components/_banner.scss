@@ -1,5 +1,6 @@
 .banner {
   z-index: 2;
+  // deleted to make the button work
   color: white;
   text-align: center;
   height: 100vh;
@@ -25,4 +26,10 @@
 
 .banner-under-navbar {
   margin-top: -70px;
+}
+
+.container {
+  .container-testimonials{
+    padding: 50px 0;
+  }
 }
