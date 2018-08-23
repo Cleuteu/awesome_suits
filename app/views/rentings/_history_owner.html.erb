@@ -6,7 +6,7 @@
     <!-- <h1 class="project-name">My rentings timeline</h1> -->
       <div id="timeline">
         <% @owner_suits.each do |suit| %>
-          <% suit.rentings.each do |renting| %>
+          <% suit.rentings.order(id: :desc).each do |renting| %>
           <div class="timeline-item">
             <div class="timeline-icon">
               <svg version="1.1" id="Layer_1" x="0px" y="0px"

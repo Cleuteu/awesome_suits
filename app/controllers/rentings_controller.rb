@@ -3,7 +3,7 @@ class RentingsController < ApplicationController
   before_action :set_renting, only: [:show, :destroy]
 
   def index
-    @rentings = policy_scope(Renting).where(user_id: current_user)
+    @rentings = policy_scope(Renting).where(user_id: current_user).order(id: :desc)
     @owner_suits = policy_scope(Suit).where(user_id: current_user)
   end
 
@@ -15,7 +15,7 @@ class RentingsController < ApplicationController
     authorize @renting
 
     if @renting.save
-      redirect_to suit_path(@suit)
+      redirect_to rentings_path
     else
       render './suits/show'
     end
