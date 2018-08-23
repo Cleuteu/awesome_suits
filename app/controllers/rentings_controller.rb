@@ -1,5 +1,10 @@
 class RentingsController < ApplicationController
-  before_action :set_renting, only: [:destroy]
+  skip_before_action :authenticate_user!, only: :index
+  before_action :set_renting, only: [:show, :destroy]
+
+  def index
+    @rentings = policy_scope(Renting).order(created_at: :desc)
+  end
 
   def create
     @suit = Suit.find(params[:suit_id])
@@ -13,6 +18,11 @@ class RentingsController < ApplicationController
     else
       render './suits/show'
     end
+  end
+
+  def show
+    authorize @renting
+    @review = Review.new
   end
 
   def destroy
