@@ -32,7 +32,7 @@
             <% else %>
               <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-avatar' %>
             <% end %>
-            <p class="card-price">£<%= suit.price_per_day %></p>
+            <p class="card-price">£ <%= suit.price_per_day %></p>
           <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
         </div>
       </div>
