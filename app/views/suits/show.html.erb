@@ -4,7 +4,16 @@
   <% url2 = cl_image_tag @suit.photo %>
 <% end %>
 
+
 <div class="container" style="margin-bottom: 70px; display: flex;">
+<% @reviews.each do |review| %>
+  <% if Renting.find(review.renting_id).suit_id == @suit.id %>
+    <% User.find(review.user_id).first_name %> <% User.find(review.user_id).last_name %>
+    Title : <%= review.title %>
+    Rate : <%= review.rate %>
+    <%= review.content %>
+  <% end %>
+<% end %>
   <div class="row">
     <div class="show-left col-xs-4">
       <div class="wrapper" style="height: 525px">
