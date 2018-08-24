@@ -1,16 +1,12 @@
 .wrapper-show-renting {
-  margin-top: 70px;
+  margin-top: 60px;
   min-height: 100vh;
   h1 {
     margin-left: 0;
   }
 }
-
 .order-review-and-chat {
-  margin-top: 30px;
-}
-
-.order-review-and-chat {
+  margin-top: 25px;
   .flex-container {
     display: flex;
     justify-content: center;
@@ -18,7 +14,6 @@
   .flex-item {
   }
 }
-
 .order-recap {
   h1 {
     background: #DDDDDD;
@@ -28,18 +23,19 @@
     padding-left: 10px;
   }
 }
-
 .chat-wrapper {
-  width: 80%;
+  width: 67%;
 }
-
 .sender {
   font-weight: lighter;
   font-size: 16px;
   padding-left: 10px;
 }
-
 .chat-message {
   background: #edeaea;
   padding: 10px;
+}
+.chat-container {
+  display: flex;
+  justify-content: center;
 }
