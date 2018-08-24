@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newMessageForm = document.getElementById('new_message');
+  newMessageForm.innerHTML = innerHTML;
+}
+
+function addMessage(messageHTML) {
+  const messages = document.getElementById('messages');
+  messages.insertAdjacentHTML('beforebegin', messageHTML);
+}
+
+<% if @message.errors.any? %>
+  refreshForm('<%= j render "messages/form", renting: @renting, message: @message %>');
+<% else %>
+  addMessage('<%= j render "messages/show", message: @message %>');
+  refreshForm('<%= j render "messages/form", renting: @renting, message: Message.new %>');
+<% end %>
