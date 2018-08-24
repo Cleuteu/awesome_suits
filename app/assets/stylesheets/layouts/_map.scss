@@ -3,6 +3,8 @@
   // position: sticky !important;
   // top:140px !important;
   height: 64vh;
+  border: 1px solid lightgray;
+  border-radius: 1px;
 }
 .main-container {
   display: flex;
@@ -10,7 +12,7 @@
 .map-container {
   flex: 0 0 440px;
   position: sticky !important;
-  top:133px !important;
+  top:118px !important;
   height: 0vh;
   padding: 0px 30px 0px 0px;
 }
