@@ -12,7 +12,7 @@ url_suit = ['https://vignette.wikia.nocookie.net/peaky-blinders/images/e/e4/Tomm
       'http://leblogdemonsieur.com/wp-content/uploads/2014/07/NUP_148281_1176.jpg',
       'https://i.pinimg.com/originals/7b/c6/41/7bc641d539b0c5a3a342d66c213d444c.jpg',
       'https://vignette.wikia.nocookie.net/jamesbond/images/d/dc/James_Bond_%28Pierce_Brosnan%29_-_Profile.jpg/revision/latest?cb=20130506224906',
-      'https://cdn-s-www.leprogres.fr/images/CA0517A9-3A47-40DC-8BA9-33134790E59D/LPR_v1_02/title-1479278308.jpg',
+      'https://www.slaters.co.uk/media/catalog/product/cache/1/thumbnail/522x694/17f82f742ffe127f42dca9de82fb58b1/0/2/02019626-bi-om.jpg',
       'https://www.usinenouvelle.com/mediatheque/3/4/4/000494443_image_896x598/francois-fillon.jpg',
       'https://www.tuxboard.com/photos/2014/03/bebe-en-costume-7.jpg',
       'http://www.lolpetshop.com/695-large_default/smoking-3-piece-pour-chien.jpg',
@@ -34,8 +34,8 @@ url_user = ['https://vignette.wikia.nocookie.net/peaky-blinders/images/9/93/Tomm
 
 first_names_users = ['Tommy', 'David', 'Gabriel', 'Barney', 'James', 'Dodo', 'Francois', 'Baby', 'Medor', 'Frank']
 last_names_users = ['Shelby', 'Beckham', 'Macht', 'Stinson', 'Bond', 'La Saumur', 'Fillon', 'Goodboy', 'Ribery']
-suits_names = ['The Grace', 'The soccer suit', 'Gentleman\'s suit', 'How I will **** your mother', 'Suit shaken, not stirred', 'Le Nafissatou',
-                '#rendsl\'argent', 'Impress your mom', 'Le wouf', 'Le kostume classe tmtc']
+suits_names = ['Wool Suit', 'Perfect for weddings', 'Gentleman\'s suit', 'Suit up!', 'Suit used in Goldeneye', 'Suit in tweed',
+                'Presidential suit, brand new', 'My ex husband suit', 'A suit for your dog', 'il ai tro gran lol']
 
 suits_address = [ '64, rue de la Hulotais SAINT-QUENTIN france',
                   '16 Rue Réaumur Paris France',
@@ -49,11 +49,11 @@ suits_address = [ '64, rue de la Hulotais SAINT-QUENTIN france',
                   '3 Rue Maréchal Foch, Perpignan, France'
                 ]
 
-message_content1 = 'Bonjour, je dois participer à l\'enterrement du poisson poisson rouge du meilleur ami de mon oncle par alliance,
-                   et j\ai vraiment la flemme de dépenser un costume à 500 balles pour ça... Le votre semble très adapté pour ce type
+message_content1 = 'Bonjour, je dois participer à l\'enterrement de vie de garçon de mon cousin,
+                   et j\ai vraiment la flemme de dépenser un costume à 500 euros pour ça... Le votre semble très adapté pour ce type
                    d\événement. Est-il toujours disponible?'
 
-message_content2 = 'Bonjour Monsieur,\n Je l\'ai moi-même porté la semaine dernière à la bar mitzvah de mon chien, il est en effet du plus bel effet
+message_content2 = 'Bonjour Monsieur,\n Je l\'ai moi-même porté la semaine dernière à l\'enterrement de vie de garçon de mon patron, il est en effet du plus bel effet
                     pour ce type de manifestation. Il est toujours disponible et je valide votre demande de réservation.'
 
 review1_content = 'Ce costume sentait vraiment mauvais... je l\'avais pris pour un rendez-vous Tinder, je peux vous dire que je suis rentré tout seul!'
@@ -78,43 +78,6 @@ i = 9
   suit.user_id = user.id
   suit.save!
 
-  renting1 = Renting.new(start_date: Date.new(2018,8,28), end_date: Date.new(2018,8,30))
-  renting2 = Renting.new(start_date: Date.new(2018,8,26), end_date: Date.new(2018,8,27))
-
-  renting1.suit = suit
-  renting2.suit = suit
-
-  renting1.user = user
-  renting2.user = user
-
-  renting1.save!
-  renting2.save!
-
-  review1 = Review.new(date: Date.new(2018,8,16), title: 'Sentait mauvais...', rate: 2, content: review1_content)
-  review2 = Review.new(date: Date.new(2018,8,19), title: 'Ce costume a changé ma vie!', rate: 5, content: review1_content)
-
-  review1.renting = renting1
-  review2.renting = renting1
-
-  review1.user = user
-  review2.user = user
-
-  review1.save!
-  review2.save!
-
-
-  message1 = Message.new(content:message_content1, date: Date.new(2018,8,16))
-  message2 = Message.new(content: message_content2, date: Date.new(2018,8,20))
-
-  message1.renting = renting1
-  message2.renting = renting1
-
-  message1.user = user
-  message2.user = user
-
-  message1.save!
-  message2.save!
-
   i -= 1
 end
 
@@ -122,25 +85,48 @@ puts 'Creating test user'
 user = User.new(email: 'test@test.com', first_name: 'Alex', last_name: 'Marichal', password: '123456')
 user.save!
 
-suit = Suit.new(name: 'Un bon gros suit',
-              color: 'Yellow',
+suit1 = Suit.new(name: 'Purple Suit',
+              color: 'Purple',
               price_per_day: Faker::Number.between(35, 180),
               style: [ 'Classic suit', 'Elegant tuxedo', 'Eccentic suit'].sample,
               size: ['S', 'M', 'L', 'XL'].sample,
               address: '16 villa gaudelet Paris')
-suit.remote_photo_url = 'https://www.opposuits.com/media/catalog/product/cache/16/image/550x/925f46717e92fbc24a8e2d03b22927e1/o/s/osui_shineapple_website_rgb_ls_1.jpg'
-suit.user = user
+suit1.remote_photo_url = 'http://www.jbsuits.com/product_images/m/118/slim-fit-3-piece-suit__31844_std.jpg'
+suit1.user = user
 
-suit.save!
+suit1.save!
+
+suit2 = Suit.new(name: 'Grey Suit',
+              color: 'Grey',
+              price_per_day: Faker::Number.between(35, 180),
+              style: [ 'Classic suit', 'Elegant tuxedo', 'Eccentic suit'].sample,
+              size: ['S', 'M', 'L', 'XL'].sample,
+              address: '16 villa gaudelet Paris')
+suit2.remote_photo_url = 'https://img.shopstyle-cdn.com/pim/9d/09/9d09328af852a43f207aef59eddcd78c_xlarge.jpg'
+suit2.user = user
+
+suit2.save!
+
+suit3 = Suit.new(name: 'Tweed Suit',
+              color: 'Grey',
+              price_per_day: Faker::Number.between(35, 180),
+              style: [ 'Classic suit', 'Elegant tuxedo', 'Eccentic suit'].sample,
+              size: ['S', 'M', 'L', 'XL'].sample,
+              address: '16 villa gaudelet Paris')
+suit3.remote_photo_url = 'https://cdn.shopify.com/s/files/1/1723/3291/products/Cavani-Connall-Three-Piece-Suit-Worn-Updated-Edit.jpg'
+suit3.user = user
+
+suit3.save!
+
 
 renting1 = Renting.new(start_date: Date.new(2018,8,28), end_date: Date.new(2018,8,30))
 renting2 = Renting.new(start_date: Date.new(2018,8,26), end_date: Date.new(2018,8,27))
 
-renting1.suit = suit
-renting2.suit = suit
+renting1.suit = suit3
+renting2.suit = suit3
 
-renting1.user = user
-renting2.user = user
+renting1.user = User.first
+renting2.user = User.last(2).first
 
 renting1.save!
 renting2.save!
@@ -151,8 +137,8 @@ review2 = Review.new(date: Date.new(2018,8,19), title: 'Ce costume a changé ma 
 review1.renting = renting1
 review2.renting = renting1
 
-review1.user = user
-review2.user = user
+review1.user = User.first
+review2.user = User.last(2).first
 
 review1.save!
 review2.save!
@@ -164,8 +150,88 @@ message2 = Message.new(content: message_content2, date: Date.new(2018,8,20))
 message1.renting = renting1
 message2.renting = renting1
 
-message1.user = user
-message2.user = user
+message1.user = User.first
+message2.user = User.last(2).first
+
+message1.save!
+message2.save!
+
+# ////////
+
+
+renting1 = Renting.new(start_date: Date.new(2018,8,28), end_date: Date.new(2018,8,30))
+renting2 = Renting.new(start_date: Date.new(2018,8,26), end_date: Date.new(2018,8,27))
+
+renting1.suit = suit1
+renting2.suit = suit1
+
+renting1.user = User.first
+renting2.user = User.last(2).first
+
+renting1.save!
+renting2.save!
+
+review1 = Review.new(date: Date.new(2018,8,16), title: 'Sentait mauvais...', rate: 2, content: review1_content)
+review2 = Review.new(date: Date.new(2018,8,19), title: 'Ce costume a changé ma vie!', rate: 5, content: review1_content)
+
+review1.renting = renting1
+review2.renting = renting1
+
+review1.user = User.first
+review2.user = User.last(2).first
+
+review1.save!
+review2.save!
+
+
+message1 = Message.new(content:message_content1, date: Date.new(2018,8,16))
+message2 = Message.new(content: message_content2, date: Date.new(2018,8,20))
+
+message1.renting = renting1
+message2.renting = renting1
+
+message1.user = User.first
+message2.user = User.last(2).first
+
+message1.save!
+message2.save!
+
+# ///
+
+
+renting1 = Renting.new(start_date: Date.new(2018,8,28), end_date: Date.new(2018,8,30))
+renting2 = Renting.new(start_date: Date.new(2018,8,26), end_date: Date.new(2018,8,27))
+
+renting1.suit = suit2
+renting2.suit = suit2
+
+renting1.user = User.first
+renting2.user = User.last(2).first
+
+renting1.save!
+renting2.save!
+
+review1 = Review.new(date: Date.new(2018,8,16), title: 'Sentait mauvais...', rate: 2, content: review1_content)
+review2 = Review.new(date: Date.new(2018,8,19), title: 'Ce costume a changé ma vie!', rate: 5, content: review1_content)
+
+review1.renting = renting1
+review2.renting = renting1
+
+review1.user = User.first
+review2.user = User.last(2).first
+
+review1.save!
+review2.save!
+
+
+message1 = Message.new(content:message_content1, date: Date.new(2018,8,16))
+message2 = Message.new(content: message_content2, date: Date.new(2018,8,20))
+
+message1.renting = renting1
+message2.renting = renting1
+
+message1.user = User.first
+message2.user = User.last(2).first
 
 message1.save!
 message2.save!
