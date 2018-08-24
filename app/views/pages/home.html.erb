@@ -3,8 +3,8 @@
     <h1>Awesome suits</h1>
 
     <p><span id="banner-typed-text">Not all superheroes wear capes</span></p>
-    
-  <div class="search-bar search-bar-home">
+
+    <div class="search-bar search-bar-home">
     <%= form_tag suits_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
@@ -31,8 +31,6 @@
       <%= link_to image_tag("logo-gq.png", border: 0), {class: 'testimonial-img'}%>
       <p class="testimonial-quote">"The best a man can get"</p>
     </div>
-
-
 
     <div class="card-description-testimonials text-center flex-item">
       <%= link_to image_tag("logo-monsieur.png", border: 0), {class: 'testimonial-img'}%>

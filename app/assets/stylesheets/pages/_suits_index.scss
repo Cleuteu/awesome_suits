@@ -24,7 +24,7 @@
       box-shadow: 1px 4px 6px rgba(0,0,0,0.2);
     }
     .bottom{
-      padding: 12px;
+      padding: 12px 6px;
       h1 {
         margin: 0;
         font-size: 18px;
@@ -34,20 +34,11 @@
         font-size: 14px;
         line-height: 24px;
         color: gray;
-        // font-weight: lighter;
       }
     }
   }
 }
-
 .card {
-//   height: 371px;
-//   width: 263px;
-//   margin: 20px 0px;
-//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-//   background-size: cover !important;
-//   background-position: center;
-//   color: white;
   position: relative;
 }
 .card-avatar {
@@ -70,23 +61,6 @@
   padding: 6px;
   // letter-spacing: 1px;
 }
-// .card-description {
-//   position: absolute;
-//   width: 90%;
-//   bottom: 10px;
-//   left: 10px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-// }
-// .card-description h2 {
-//   font-size: 24px;
-// }
-// .card-description p {
-//   font-size: 14px;
-//   opacity: 0.7;
-//   font-weight: lighter;
-// }
 .card-link {
   position: absolute;
   top: 0;
@@ -101,14 +75,12 @@
 .card-link:hover {
   opacity: 0.1;
 }
-
 .container-testimonials {
   .flex-container-testimonial {
   display: flex;
   justify-content: center;
   }
 }
-
 .card-description-testimonials {
   width: 230px;
   img {
@@ -117,38 +89,17 @@
     padding-bottom: 10px;
   }
 }
-
 .wrapper-testimonials {
   max-width: 300px;
 }
-
 .flex-container-for-testimonials {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .testimonial-quote {
   font-size: 14px;
   text-align: center;
   font-style: italic;
   color: rgb(20,20,20);
-
 }
-.search {
-  color: #aaa;
-  font-size: 16px;
-  input {
-  background: #fcfcfc;
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
-  // text-indent: 32px;
-  }
-  .fa-search {
-  position: absolute;
-  top: 12px;
-  right: 44px;
-  }
-}
-

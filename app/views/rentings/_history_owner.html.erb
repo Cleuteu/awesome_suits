@@ -1,5 +1,4 @@
 <div class="container" style="margin-top: 30px;">
-<p>
   <% if @owner_suits.first.nil? %>
     <p>You don't have any suit on the platform</p>
   <% else %>
@@ -23,6 +22,7 @@
                 <div class="col-xs-9">
                   <h2>Suit rented to: <strong><%= renting.user.first_name %> <%= renting.user.last_name %></strong></h2>
                   <div class="timeline-description">
+                    <p style="padding-top: 10px">
                       Start date: <%= renting.start_date %>
                       -
                       End date: <%= renting.end_date %>
@@ -71,6 +71,7 @@
                 <div class="col-xs-9">
                   <h2>Suit rented to: <strong><%= renting.user.first_name %> <%= renting.user.last_name %></strong></h2>
                   <div class="timeline-description">
+                    <p style="padding-top: 10px">
                       Start date: <%= renting.start_date %>
                       -
                       End date: <%= renting.end_date %>
@@ -95,5 +96,4 @@
         <% end %>
       </div>
   <% end %>
-</p>
 </div>
