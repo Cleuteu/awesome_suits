@@ -14,3 +14,19 @@ h3 {
   font-size: 30px;
   font-weight: normal;
 }
+.search {
+  color: #aaa;
+  font-size: 16px;
+  input {
+  background: #fcfcfc;
+  // border: 1px solid #aaa;
+  border-radius: 1px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+  // text-indent: 32px;
+  }
+  .fa-search {
+  position: relative;
+  top: -31px;
+  right: -168px;
+  }
+}

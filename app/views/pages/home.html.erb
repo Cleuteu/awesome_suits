@@ -4,16 +4,15 @@
 
     <p><span id="banner-typed-text">Not all superheroes wear capes</span></p>
 
-
-    <div class="search-bar search-bar-home">
+    <div class="search search-bar search-bar-home">
       <%= form_tag suits_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Find a suit near..."
-        %>
-    <%#= link_to "Rent a suit now", suits_path, class: "btn btn-sm yellow-btn" %>
+        %><i class="fas fa-search"></i>
       <% end %>
+      <%#= link_to "Rent a suit now", suits_path, class: "btn btn-sm yellow-btn" %>
     </div>
 
   </div>
@@ -31,8 +30,6 @@
       <%= link_to image_tag("logo-gq.png", border: 0), {class: 'testimonial-img'}%>
       <p class="testimonial-quote">"The best a man can get"</p>
     </div>
-
-
 
     <div class="card-description-testimonials text-center flex-item">
       <%= link_to image_tag("logo-monsieur.png", border: 0), {class: 'testimonial-img'}%>

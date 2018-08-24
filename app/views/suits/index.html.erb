@@ -41,16 +41,15 @@
   </div>
 
   <div class="map-container">
-<!--    Formulaire de recherche-->
-  <div class="search search-bar search-bar-index" style="margin: 0 0 35px 0;">
-    <%= form_tag suits_path, method: :get do %>
-      <%= select "color", "color_selector", ["Blue", "Black", "Red", "Yellow", "Green", "Purple"], include_blank: "Color" %>
-
-      <%= select "style", "style_selector", ["Classic suit", "Elegant tuxedo", "Eccentic suit"], include_blank: "Style" %>
-      <%= select "size", "size_selector", ["XS", "S", "M", "L", "XL"], include_blank: "Size" %>
-      <%= submit_tag "Filter", :id => "submit-btn" %>
-    <% end %>
-  </div>
+  <!-- <div class="search search-bar search-bar-index" style="margin: 0 0 35px 0;"> -->
+    <div style="margin: 0 0 30px 0; font-size: 16px;">
+      <%= form_tag suits_path, method: :get, class: 'suit-filter' do %>
+        <%= select "color", "color_selector", ["Blue", "Black", "Red", "Yellow", "Green", "Purple"], include_blank: "Color" %>
+        <%= select "style", "style_selector", ["Classic suit", "Elegant tuxedo", "Eccentic suit"], include_blank: "Style" %>
+        <%= select "size", "size_selector", ["XS", "S", "M", "L", "XL"], include_blank: "Size" %>
+        <%= submit_tag "Filter", :id => "submit-btn" %>
+      <% end %>
+    </div>
 
     <div id="map" data-markers="<%= @markers.to_json %>"></div>
   </div>
