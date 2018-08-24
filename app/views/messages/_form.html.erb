@@ -1,4 +1,4 @@
 <%= simple_form_for([ @renting, message ], remote: true) do |f| %>
-  <%= f.input :content, label:'Write your message' %>
+  <%= f.input :content, label: false, placeholder: 'Write your message' %>
   <%= f.submit "Leave a message", class: "btn yellow-btn text-center" %>
 <% end %>

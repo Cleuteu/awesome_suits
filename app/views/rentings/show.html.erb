@@ -1,13 +1,11 @@
 <div class="wrapper-show-renting">
   <div class="container">
 
-    <div>
       <div class="row">
-        <div class="col-xs-3">
-          <%= cl_image_tag(@renting.suit.photo,
-                width: 200, height: 300, crop: :fill) %>
+        <div class="col-xs-3 col-xs-offset-1">
+          <%= cl_image_tag(@renting.suit.photo, width: 200, height: 300, crop: :fill) %>
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-7">
           <div class="order-recap">
             <h1>Order Recap</h1>
             <p>Nom du costume: <strong><%= @suit.name %></strong></p>
@@ -19,7 +17,6 @@
           </div>
         </div>
       </div>
-    </div>
 
     <div class="order-review-and-chat">
       <% if current_user == @renting.suit.user %>
@@ -28,18 +25,21 @@
       <% end %>
     </div>
 
-    <div class="chat-wrapper flex-item">
-      <h1><strong>CHAT</strong></h1>
+    <div class="chat-container">
+      <div class="chat-wrapper flex-item">
+        <h1><strong>CHAT</strong></h1>
 
-      <div id="messages">
-        <% @messages.order(id: :desc).each do |message| %>
-          <%= render 'messages/show', message: message %>
-        <% end %>
-      </div>
+        <div id="messages">
+          <% @messages.order(id: :desc).each do |message| %>
+            <%= render 'messages/show', message: message %>
+          <% end %>
+        </div>
 
-      <div id="renting-form-div">
-        <%= render 'messages/form', renting: @renting, message: @message %>
+        <div id="renting-form-div" class="text-center">
+          <%= render 'messages/form', renting: @renting, message: @message %>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
