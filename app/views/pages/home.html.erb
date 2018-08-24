@@ -4,16 +4,17 @@
 
     <p><span id="banner-typed-text">Not all superheroes wear capes</span></p>
 
-    <div class="search search-bar search-bar-home">
-      <%= form_tag suits_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a suit near..."
-        %><i class="fas fa-search"></i>
-      <% end %>
-      <%#= link_to "Rent a suit now", suits_path, class: "btn btn-sm yellow-btn" %>
-    </div>
+    <div class="search-bar search-bar-home">
+    <%= form_tag suits_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        :id => "suit_address",
+        placeholder: "Where are you looking for a suit?"
+      %>
+      <%= submit_tag 'Find a suit ', class: "btn btn-sm yellow-btn" %>
+    <% end %>
+  </div>
 
   </div>
 </div>
