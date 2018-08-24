@@ -3,46 +3,39 @@
   background: rgba(15,15,15, 1);
   transition: all 0.5s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px 10px 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 10;
 }
-
 .navbar-wagon-background-transparent {
   background-color: black;
 }
-
 .navbar-wagon-black {
   color: rgba(0,0,0,1);
 }
-
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
 }
-
 /* User Avatar */
 .navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
-
 /* Right section */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
 }
-
 /* Navbar link */
 .navbar-wagon-link {
   color: rgba(255,255,255,0.8);
@@ -52,7 +45,6 @@
   color: rgba(255,255,255,1);
   text-decoration: none;
 }
-
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
