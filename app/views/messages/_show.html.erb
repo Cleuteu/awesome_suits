@@ -1,0 +1,5 @@
+<p>
+  <%= User.find(message.user_id).first_name %>
+  <%= message.date.strftime "%Y-%m-%d %H:%M" %>
+  <%= message.content %>
+</p>

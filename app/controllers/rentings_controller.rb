@@ -23,6 +23,8 @@ class RentingsController < ApplicationController
 
   def show
     authorize @renting
+    @suit = @renting.suit
+    @owner = @renting.suit.user
     @review = Review.new
     @message = Message.new
     @messages = Message.where(renting_id: params[:id]).reverse_order
