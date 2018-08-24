@@ -113,5 +113,4 @@ class SuitsController < ApplicationController
       @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(size: params[:size][:size_selector])
     end
   end
-
 end
