@@ -82,7 +82,7 @@ i = 9
 end
 
 puts 'Creating test user'
-user = User.new(email: 'test@test.com', first_name: 'Alex', last_name: 'Marichal', password: '123456')
+user = User.new(email: 'test@test.com', first_name: 'Alex', last_name: 'Marichal', password: '123456', phone:'0678765468')
 user.save!
 
 suit1 = Suit.new(name: 'Purple Suit',
