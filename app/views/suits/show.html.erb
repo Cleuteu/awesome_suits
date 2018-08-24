@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 35px; margin-bottom: 35px;">
+<div class="container" style="margin-top: 40px; margin-bottom: 25px;">
 
   <div style="display:flex;">
 
@@ -15,20 +15,35 @@
     </div>
 
     <div class="description-container" style="flex-grow: 1;">
-      <h1 style="margin: 0;"><%= @suit.name %></h1>
-      <h3>
-        By <%= User.find(@suit.user_id).first_name %> <%= User.find(@suit.user_id).last_name %>
-      </h3>
+      <h1 style="margin: 0; text-transform: uppercase;"><%= @suit.name %></h1>
+      <div style="display: flex; align-items: center;">
+        <div>
+          <% if @suit.user.photo.url.nil? %>
+            <%= cl_image_tag("vh5z2ujeausr6hlxy3zf", width: 80, height: 80, crop: :thumb, gravity: :face, style: 'border-radius: 50px; width: 40px; height: 40px;') %>
+          <% else %>
+            <%= cl_image_tag @suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, style: 'border-radius: 50px; width: 40px; height: 40px;' %>
+          <% end %>
+        </div>
+        <div style="padding-left: 15px;">
+          <h3>By
+            <a href="#">
+              <%= User.find(@suit.user_id).first_name %> <%= User.find(@suit.user_id).last_name %>
+            </a>
+          </h3>
+        </div>
+      </div>
       <br>
-      <p>£ <%= @suit.price_per_day %> / day</p>
-      <p>Size: <%= @suit.size %></p>
+      <p>£<%= @suit.price_per_day %> / day</p>
+      <p style="font-weight: lighter;">Size: <%= @suit.size %></p>
       <p class="dot" style="background-color: <%= @suit.color.downcase %>;"></p>
       <br>
       <br>
-      <p style="font-weight: lighter;">Tuxedo is 100% super-fine Italian merino wool</p>
-      <p style="font-weight: lighter;">Jacket has One-button closure</p>
-      <p style="font-weight: lighter;">Jacket has 100% silk satin shawl collar</p>
-      <p style="font-weight: lighter;">This complete outfit includes 6 items</p>
+      <div style="font-weight: lighter; font-size: 17px;">
+        <p>Tuxedo is 100% super-fine Italian merino wool</p>
+        <p>Jacket has One-button closure</p>
+        <p>Jacket has 100% silk satin shawl collar</p>
+        <p>This complete outfit includes 6 items</p>
+      </div>
     </div>
 
     <div style="padding-top: 10px;">
@@ -37,7 +52,7 @@
 
   </div>
 
-  <div style="padding: 20px 70px;">
+  <div style="padding: 10px 70px;">
     <h3 style="color: black; margin-bottom: 20px;">Reviews</h3>
     <% @reviews.each do |review| %>
       <% if Renting.find(review.renting_id).suit_id == @suit.id %>
@@ -57,7 +72,7 @@
 
 </div>
 
-<div class="container" style="padding-top: 0; margin-bottom: 70px;">
+<div class="container" style="padding: 0 85px; margin-bottom: 75px;">
   <div id="map" style="width: 100%; height: 600px; margin-top: 0;" data-markers="<%= @markers.to_json %>">
   </div>
 </div>

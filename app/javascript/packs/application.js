@@ -8,9 +8,6 @@ navTabClick();
 import { activeButton } from "../components/navtabs"
 activeButton();
 
-import { cartAnim } from '../components/card';
-cartAnim();
-
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 // initUpdateNavbarOnScroll();
 

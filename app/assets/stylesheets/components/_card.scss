@@ -135,3 +135,19 @@
   color: rgb(20,20,20);
 
 }
+.search {
+  color: #aaa;
+  font-size: 16px;
+  input {
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+  // text-indent: 32px;
+  }
+  .fa-search {
+  position: absolute;
+  top: 12px;
+  right: 44px;
+  }
+}

@@ -39,12 +39,14 @@
         </div>
         <div class="text-center">
           <% if policy(suit).edit? %>
-            <%= link_to "Update", edit_suit_path(suit), class: "yellow-btn" %>
+            <%= link_to edit_suit_path(suit), class: "btn btn-link" do %>
+            <i class="fas fa-edit" style="font-size: 24px; color:gray;"></i><% end %>
           <% end %>
           <% if policy(suit).destroy? %>
-            <%= link_to "Delete", suit_path(suit),
+            <%= link_to suit_path(suit),
                 method: :delete,
-                data: { confirm: "Are you sure?" }, class: "yellow-btn" %>
+                data: { confirm: "Delete this suit?" }, class: "btn btn-link" do %>
+                <i class="far fa-trash-alt" style="font-size: 24px; color:gray;""></i><% end %>
           <% end %>
         </div>
       </div>

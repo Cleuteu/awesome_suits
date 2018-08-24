@@ -11,7 +11,8 @@
 
       <!-- Links when logged in -->
 
-      <%= link_to "MY SUITS", owner_index_path, class: "navbar-wagon-item navbar-wagon-link" %><%= link_to "MY RENTINGS", rentings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "MY SUITS", owner_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "MY RENTINGS", rentings_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <div> <a href="/suits" class="btn btn-sm animated-button thar-three">Rent a suit now</a> </div>
 
       <!-- Avatar with dropdown menu -->
@@ -25,12 +26,14 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Edit profile") %>
+                <i class="fa fa-cog"></i>
+                <%= t(".settings", default: "Edit profile") %>
               <% end %>
             </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+                <i class="fas fa-sign-out-alt"></i>
+                <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
           </ul>
