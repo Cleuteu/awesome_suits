@@ -1,4 +1,4 @@
-<div style="font-weight: lighter; font-size: 16px; margin-bottom: 70px;">
+<div style="font-weight: lighter; font-size: 16px; margin: 70px 0;" class='material-fake'>
   <%= simple_form_for @suit,
   wrapper: :horizontal_form,
   wrapper_mappings: {
@@ -11,14 +11,16 @@
     range:         :horizontal_range,
     time:          :horizontal_multi_select
   } do |f| %>
-    <%= f.input :name, label: "Name your suit" %>
-    <%= f.input :color, collection: ["Blue", "Black", "Red", "Yellow", "Green", "Purple"] %>
-    <%= f.input :description, label: "Please give a short description"  %>
-    <%= f.input :style, collection: ["Classic suit", "Elegant tuxedo", "Eccentic suit"] %>
-    <%= f.input :size, collection: ["XS", "S", "M", "L", "XL"] %>
-    <%= f.input :price_per_day, label: "Price per day" %>
-    <%= f.input :address, label: 'Where is the suit?' %>
-    <%= f.input :photo %>
+    <%= f.input :name, label: false, placeholder: 'Name your suit' %>
+    <%= f.input :color, label: false, collection: ["Blue", "Black", "Red", "Yellow", "Green", "Purple"], prompt: 'Select color' %>
+    <%= f.input :description, label: false, placeholder: 'Please describe your suit' %>
+    <%= f.input :style, label: false, collection: ["Classic suit", "Elegant tuxedo", "Eccentic suit"], prompt: 'Select style' %>
+    <div class="sizes">
+      <%= f.input :size, label: false, as: :radio_buttons, collection: ['XS', 'S', 'M', 'L', 'XL'] %>
+    </div>
+    <%= f.input :price_per_day, label: false, placeholder: 'Price / day' %>
+    <%= f.input :address, label: false %>
+    <%= f.input :photo, label: 'Photo:'%>
     <%= f.input :photo_cache, as: :hidden %>
     <div class="text-center" style= "padding-top: 10px;">
       <%= f.submit "Submit", class: "btn yellow-btn" %>

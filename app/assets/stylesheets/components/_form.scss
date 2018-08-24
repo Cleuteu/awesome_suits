@@ -1,0 +1,10 @@
+.material-fake {
+  textarea,
+  input[type=number],
+  input[type=text] {
+    border: 0;
+    box-shadow: none;
+    border-bottom: 2px solid gray;
+    padding: 0;
+  }
+}

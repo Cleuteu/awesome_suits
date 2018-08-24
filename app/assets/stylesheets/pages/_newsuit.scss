@@ -1,14 +1,6 @@
-#background-image-new {
-  margin-top: -22px;
-  background-repeat:no-repeat;
-  background-size: cover;
-}
 .flex-container {
   display: flex;
   justify-content: center;
-}
-.new-suit-container {
-  padding-top: 35px;
 }
 // .form-suit-shared {
 //   color: black;
@@ -16,22 +8,38 @@
 //     font-weight: lighter;
 //   }
 // }
-#bouton-back {
-  margin-top: 13px;
-  text-align: center;
-}
-h3 {
-  color: black;
-  font-size: 30px;
-  font-weight: normal;
-}
-
+// #bouton-back {
+//   margin-top: 13px;
+//   text-align: center;
+// }
 .renting-form-inline {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .date-holder {
   display: none !important;
+}
+.sizes {
+  .col-sm-12 {
+  display: flex;
+  justify-content: space-between;
+  }
+  .form-check {
+    background-color: gold;
+    width: 70px;
+    height: 35px;
+    text-align: center;
+    padding-top: 6px;
+    color: black;
+  }
+  .form-check-input {
+    margin-right: 7px;
+  }
+}
+.new-suit-background-image {
+  background-image: url('bg-suits.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
