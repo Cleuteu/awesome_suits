@@ -5,17 +5,20 @@ class SuitsController < ApplicationController
   def index
     # @suits = Suit.all
     # @suits(suit_params) = params[:query]
-    # if params[:query].present?
-    #   @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(color: params[:query])
+    @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
 
-    # else #display all suits
-    #   @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
+    # if params[:style].present? && params[:style][:style_selector] != ""
+    #  @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(style: params[:style][:style_selector])
+    # elsif params[:color].present? && params[:color][:color_selector] != ""
+    #   @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(color: params[:color][:color_selector])
+    # elsif params[:size].present? && params[:size][:size_selector] != ""
+    #   @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(size: params[:size][:size_selector])
     # end
 
+    search_style
+    search_size
+    search_color
 
-    # if color
-    #   @suits.where(color: params[''])
-    # end
 
     @markers = @suits.map do |suit|
       {
@@ -92,4 +95,23 @@ class SuitsController < ApplicationController
   def set_suit
     @suit = Suit.find(params[:id])
   end
+
+  def search_style
+    if params[:style].present? && params[:style][:style_selector] != ""
+      @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(style: params[:style][:style_selector])
+    end
+  end
+
+  def search_color
+    if params[:color].present? && params[:color][:color_selector] != ""
+      @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(color: params[:color][:color_selector])
+    end
+  end
+
+  def search_size
+    if params[:size].present? && params[:size][:size_selector] != ""
+      @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(size: params[:size][:size_selector])
+    end
+  end
+
 end

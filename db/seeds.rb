@@ -69,7 +69,7 @@ i = 9
   user.remote_photo_url = url_user[i]
   user.save!
   suit = Suit.new(name: suits_names[i],
-                color: Faker::Color.color_name,
+                color: ["Blue", "Black", "Red", "Yellow", "Green", "Purple"].sample,
                 price_per_day: Faker::Number.between(35, 180),
                 style: [ 'Classic suit', 'Elegant tuxedo', 'Eccentic suit'].sample,
                 size: ['S', 'M', 'L', 'XL'].sample,
@@ -123,7 +123,7 @@ user = User.new(email: 'test@test.com', first_name: 'Alex', last_name: 'Marichal
 user.save!
 
 suit = Suit.new(name: 'Un bon gros suit',
-              color: Faker::Color.color_name,
+              color: 'Yellow',
               price_per_day: Faker::Number.between(35, 180),
               style: [ 'Classic suit', 'Elegant tuxedo', 'Eccentic suit'].sample,
               size: ['S', 'M', 'L', 'XL'].sample,

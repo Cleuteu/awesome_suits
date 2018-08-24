@@ -8,6 +8,7 @@
 }
 .main-container {
   display: flex;
+  min-height: 100vh;
 }
 .map-container {
   flex: 0 0 440px;
