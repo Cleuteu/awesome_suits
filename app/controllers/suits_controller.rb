@@ -3,17 +3,11 @@ class SuitsController < ApplicationController
   before_action :set_suit, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @suits = Suit.all
-    # @suits(suit_params) = params[:query]
-    @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
-
-    # if params[:style].present? && params[:style][:style_selector] != ""
-    #  @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(style: params[:style][:style_selector])
-    # elsif params[:color].present? && params[:color][:color_selector] != ""
-    #   @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(color: params[:color][:color_selector])
-    # elsif params[:size].present? && params[:size][:size_selector] != ""
-    #   @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(size: params[:size][:size_selector])
-    # end
+    if params[:query].present?
+      @suits = policy_scope(Suit).near(params[:query], 100)
+    else
+      @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
+    end
 
     search_style
     search_size
