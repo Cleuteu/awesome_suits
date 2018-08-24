@@ -1,13 +1,18 @@
 import "bootstrap";
 
 import "../plugins/flatpickr"
-import "../components/navtabs"
+
+import { navTabClick } from "../components/navtabs"
+navTabClick();
+
+import { activeButton } from "../components/navtabs"
+activeButton();
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
-initUpdateNavbarOnScroll();
+// initUpdateNavbarOnScroll();
 
 import { changeNavbarBackOnHomepage } from '../components/navbar';
-changeNavbarBackOnHomepage();
+// changeNavbarBackOnHomepage();
 
 import { loadDynamicBannerText } from '../components/banner';
-loadDynamicBannerText();
+// loadDynamicBannerText();

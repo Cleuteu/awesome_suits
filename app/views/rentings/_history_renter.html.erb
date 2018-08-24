@@ -16,7 +16,7 @@
         <div class="timeline-content right">
           <div class="row">
             <div class="col-xs-9">
-              <h2>Suit rented: <%= Suit.find(renting.suit_id).name %></h2>
+              <h2>Suit rented: <strong><%= Suit.find(renting.suit_id).name %></strong></h2>
               <div class="timeline-description">
                 <h3>Rented from: <%= renting.suit.user.first_name %> <%= renting.suit.user.last_name %></h3>
                 <p>
@@ -24,7 +24,7 @@
                   -
                   End date: <%= renting.end_date %>
                 </p>
-                <%= link_to "View my renting", renting_path(renting.id), class: 'yello-btn'%>
+                <%= link_to "View my renting", renting_path(renting.id), class: 'yellow-btn'%>
               </div>
             </div>
             <div class="col-xs-3">
@@ -38,6 +38,18 @@
             <%= url2 %>
             </div>
           </div>
+        </div>
+        <div class="timeline-waitingvalidation">
+            <h4>Owner info</h4>
+            <p>
+              Email: <strong><%= renting.suit.user.email %></strong>
+            </p>
+            <p>
+              Phone number: <strong><%= renting.suit.user.phone %></strong>
+            </p>
+            <% if renting.pending %>
+              <p style="color: orange"><i class="fas fa-exclamation-triangle"></i> Waiting owner validation</p>
+            <% end %>
         </div>
       </div>
     <% end %>

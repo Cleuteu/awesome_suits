@@ -108,6 +108,16 @@ $timeline-color: $primary-color;
     width: 100%;
   }
 
+  h2 {
+      color: black;
+      background-color: $timeline-color;
+      margin-left: 55px;
+      margin-bottom: 30px;
+      margin-right: 220px;
+      padding: 10px 0px 10px 15px;
+      font-weight: bold;
+    }
+
   .timeline-item {
     margin-bottom: 50px;
     position: relative;
@@ -131,10 +141,45 @@ $timeline-color: $primary-color;
       }
     }
 
+    .timeline-validation {
+      position: absolute;
+      padding-top: 50px;
+      right: 0;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .timeline-waitingvalidation {
+      position: absolute;
+      right: 0;
+      padding: 40px 10px 10px 10px;
+      width: 30%;
+
+      h4 {
+        background-color: #DDDDDD;
+        font-weight: bold;
+        margin: 0;
+        padding: 10px 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      p {
+        padding-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 16px;
+      }
+    }
+
     .timeline-content {
       position: relative;
       min-height: 220px;
-      width: 70%;
+      width: 60%;
       background: #fff;
       @include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
       @include prefix(border-radius, 0px);
@@ -152,7 +197,7 @@ $timeline-color: $primary-color;
       h2 {
         padding: 15px;
         background: #DDDDDD;
-        color: #fff;
+        color: black;
         margin: 0;
         margin-right: -100px;
 
@@ -162,6 +207,7 @@ $timeline-color: $primary-color;
       h3 {
         color: black;
         font-size: 20px;
+        margin-top: 30px;
       }
 
       &:before {
