@@ -8,8 +8,8 @@ class SuitsController < ApplicationController
     @markers = @suits.map do |suit|
       {
         lat: suit.latitude,
-        lng: suit.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/suits/map_box", locals: { suit: suit }) }
+        lng: suit.longitude,
+        infoWindow: { content: render_to_string(partial: "/suits/map_box", locals: { suit: suit }) }
       }
     end
   end
