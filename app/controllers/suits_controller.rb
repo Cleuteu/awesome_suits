@@ -3,7 +3,19 @@ class SuitsController < ApplicationController
   before_action :set_suit, only: [:show, :edit, :update, :destroy]
 
   def index
-    @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
+    # @suits = Suit.all
+    # @suits(suit_params) = params[:query]
+    # if params[:query].present?
+    #   @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil).where(color: params[:query])
+
+    # else #display all suits
+    #   @suits = policy_scope(Suit).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
+    # end
+
+
+    # if color
+    #   @suits.where(color: params[''])
+    # end
 
     @markers = @suits.map do |suit|
       {
