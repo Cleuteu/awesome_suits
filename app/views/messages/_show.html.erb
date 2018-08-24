@@ -1,5 +1,4 @@
 <p>
-  <%= User.find(message.user_id).first_name %>
-  <%= message.date.strftime "%Y-%m-%d %H:%M" %>
-  <%= message.content %>
+  <div class="chat-message"><%= message.content %></div>
+  <div class='sender'><em>- <%= User.find(message.user_id).first_name %></em></div>
 </p>

@@ -20,5 +20,26 @@
 }
 
 .order-recap {
-  width : 300px;
+  h1 {
+    background: #DDDDDD;
+    padding: 10px;
+  }
+  p {
+    padding-left: 10px;
+  }
+}
+
+.chat-wrapper {
+  width: 80%;
+}
+
+.sender {
+  font-weight: lighter;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.chat-message {
+  background: #edeaea;
+  padding: 10px;
 }
