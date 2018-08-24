@@ -10,11 +10,10 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+
       <%= link_to "MY SUITS", owner_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "ADD A SUIT", new_suit_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <div>
-        <a href="/suits" class="btn btn-sm animated-button thar-three">Rent a suit now</a>
-      </div>
+      <%= link_to "MY RENTINGS", rentings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <div> <a href="/suits" class="btn btn-sm animated-button thar-three">Rent a suit now</a> </div>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
