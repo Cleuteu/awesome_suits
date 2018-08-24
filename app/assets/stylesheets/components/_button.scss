@@ -20,6 +20,24 @@
   color: rgb(255, 255, 255);
 }
 
+.grey-btn {
+  color: black;
+  padding: 10px 15px;
+  font-weight: bold;
+  background: #DDDDDD;
+  transition: background 0.3s ease;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+}
+
 /* Global Button Styles */
 a.animated-button:link, a.animated-button:visited {
   position: relative;

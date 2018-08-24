@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :rentings, only: [:create]
   end
 
-  resources :rentings, only: [:index, :show, :destroy] do
+  resources :rentings, only: [:index, :show, :destroy, :update] do
     resources :reviews, only: [:create]
     resources :messages, only:[:create, :show]
   end
