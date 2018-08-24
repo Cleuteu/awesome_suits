@@ -53,7 +53,7 @@
             </div>
           </div>
           <% end %>
-        <h2>Passed rentings</h2>
+        <h2>Accepted rentings</h2>
           <% suit.rentings.order(id: :desc).where(pending: false).each do |renting| %>
           <div class="timeline-item">
             <div class="timeline-icon">

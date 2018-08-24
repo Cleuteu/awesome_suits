@@ -1,43 +1,48 @@
 <div class="wrapper-show-renting">
-  <div class="rate-your-order container">
+  <div class="container">
 
-    <%= render 'formreview', review: @review %>
-
-    <div class="order-review-and-chat flex-container">
-
-      <div class="order-recap flex-item">
-       <h1>Order Recap</h1>
-       <p>Nom du costume</p>
-       <p>Propriétaire</p>
-       <p>Numéro de téléphone:</p>
-       <p>Email</p>
-       <p>Dates de réservation</p>
-       <p>Prix</p>
-      </div>
-
-      <div class="chat-wrapper flex-item">
-        <h1>Chat</h1>
-
-        <div id="renting-form-div">
-          <%= simple_form_for [@renting, @message] do |f| %>
-          <%= f.input :content, label:'Write your message' %>
-          <%= f.submit "Leave a message", class: "btn yellow-btn text-center" %>
-          <% end %>
+    <div class="">
+      <div class="row">
+        <div class="col-xs-3">
+          <%= cl_image_tag(@renting.suit.photo,
+                width: 200, height: 300, crop: :fill) %>
         </div>
+        <div class="col-xs-9">
+          <div>
 
-
-        <ul>
-          <% @messages.each do |message| %>
-          <li>
-            <%= User.find(message.user_id).first_name %>
-            <%= message.date.strftime "%Y-%m-%d %H:%M" %>
-            <%= message.content %>
-          </li>
-          <% end %>
-        </ul>
+            <h1>Order Recap</h1>
+            <p>Nom du costume: <%= @suit.name %></p>
+            <p>Propriétaire: <%= @owner.first_name %> <%= @owner.last_name%></p>
+            <p>Numéro de téléphone: <%= @owner.phone %></p>
+            <p>Email: <%= @owner.email %></p>
+            <p>Dates de réservation: <%= @renting.start_date %> - <%= @renting.end_date %></p>
+            <p>Prix: <%= @suit.price_per_day * (@renting.end_date - @renting.start_date).numerator %> €</p>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <div class="order-review-and-chat">
+
+      <% if current_user == @renting.suit.user %>
+      <% elsif DateTime.now.to_date > @renting.end_date %>
+        <%= render 'formreview', review: @review %>
+      <% end %>
 
     </div>
-  </div>
 
+    <div class="chat-wrapper flex-item">
+      <h1>Chat</h1>
+
+      <div id="messages">
+        <% @messages.order(id: :desc).each do |message| %>
+          <%= render 'messages/show', message: message %>
+        <% end %>
+      </div>
+
+      <div id="renting-form-div">
+        <%= render 'messages/form', renting: @renting, message: @message %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -48,7 +48,7 @@
 
       <%= select "style", "style_selector", ["Classic suit", "Elegant tuxedo", "Eccentic suit"], include_blank: "Style" %>
       <%= select "size", "size_selector", ["XS", "S", "M", "L", "XL"], include_blank: "Size" %>
-      <%= submit_tag "Filter" %>
+      <%= submit_tag "Filter", :id => "submit-btn" %>
     <% end %>
   </div>
 
