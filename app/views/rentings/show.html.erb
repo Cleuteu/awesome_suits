@@ -1,38 +1,35 @@
 <div class="wrapper-show-renting">
   <div class="container">
 
-    <div class="">
+    <div>
       <div class="row">
         <div class="col-xs-3">
           <%= cl_image_tag(@renting.suit.photo,
                 width: 200, height: 300, crop: :fill) %>
         </div>
         <div class="col-xs-9">
-          <div>
-
+          <div class="order-recap">
             <h1>Order Recap</h1>
-            <p>Nom du costume: <%= @suit.name %></p>
-            <p>Propriétaire: <%= @owner.first_name %> <%= @owner.last_name%></p>
-            <p>Numéro de téléphone: <%= @owner.phone %></p>
-            <p>Email: <%= @owner.email %></p>
-            <p>Dates de réservation: <%= @renting.start_date %> - <%= @renting.end_date %></p>
-            <p>Prix: <%= @suit.price_per_day * (@renting.end_date - @renting.start_date).numerator %> €</p>
+            <p>Nom du costume: <strong><%= @suit.name %></strong></p>
+            <p>Propriétaire: <strong><%= @owner.first_name %> <%= @owner.last_name%></strong></p>
+            <p>Numéro de téléphone: <strong><%= @owner.phone %></strong></p>
+            <p>Email: <strong><%= @owner.email %></strong></p>
+            <p>Dates de réservation: <strong><%= @renting.start_date %></strong> - <strong><%= @renting.end_date %></strong></p>
+            <p>Prix: <strong><%= @suit.price_per_day * (@renting.end_date - @renting.start_date).numerator %> €</strong></p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="order-review-and-chat">
-
       <% if current_user == @renting.suit.user %>
       <% elsif DateTime.now.to_date > @renting.end_date %>
         <%= render 'formreview', review: @review %>
       <% end %>
-
     </div>
 
     <div class="chat-wrapper flex-item">
-      <h1>Chat</h1>
+      <h1><strong>CHAT</strong></h1>
 
       <div id="messages">
         <% @messages.order(id: :desc).each do |message| %>
