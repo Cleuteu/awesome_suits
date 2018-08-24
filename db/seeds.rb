@@ -119,20 +119,20 @@ suit3.user = user
 suit3.save!
 
 
-renting1 = Renting.new(start_date: Date.new(2018,8,28), end_date: Date.new(2018,8,30))
-renting2 = Renting.new(start_date: Date.new(2018,8,26), end_date: Date.new(2018,8,27))
+renting1 = Renting.new(start_date: Date.new(2018,8,16), end_date: Date.new(2018,8,19), pending: false)
+renting2 = Renting.new(start_date: Date.new(2018,8,20), end_date: Date.new(2018,8,21), pending: false)
 
 renting1.suit = suit3
-renting2.suit = suit3
+renting2.suit = Suit.first
 
 renting1.user = User.first
-renting2.user = User.last(2).first
+renting2.user = User.last(10).first
 
 renting1.save!
 renting2.save!
 
-review1 = Review.new(date: Date.new(2018,8,16), title: 'Sentait mauvais...', rate: 2, content: review1_content)
-review2 = Review.new(date: Date.new(2018,8,19), title: 'Ce costume a changé ma vie!', rate: 5, content: review1_content)
+review1 = Review.new(date: Date.new(2018,8,18), title: 'Sentait mauvais...', rate: 2, content: review1_content)
+review2 = Review.new(date: Date.new(2018,8,21), title: 'Ce costume a changé ma vie!', rate: 5, content: review2_content)
 
 review1.renting = renting1
 review2.renting = renting1
@@ -159,20 +159,20 @@ message2.save!
 # ////////
 
 
-renting1 = Renting.new(start_date: Date.new(2018,8,28), end_date: Date.new(2018,8,30))
-renting2 = Renting.new(start_date: Date.new(2018,8,26), end_date: Date.new(2018,8,27))
+renting1 = Renting.new(start_date: Date.new(2018,8,16), end_date: Date.new(2018,8,19), pending: false)
+renting2 = Renting.new(start_date: Date.new(2018,8,20), end_date: Date.new(2018,8,21), pending: false)
 
 renting1.suit = suit1
-renting2.suit = suit1
+renting2.suit = Suit.first
 
 renting1.user = User.first
-renting2.user = User.last(2).first
+renting2.user = User.last(10).first
 
 renting1.save!
 renting2.save!
 
-review1 = Review.new(date: Date.new(2018,8,16), title: 'Sentait mauvais...', rate: 2, content: review1_content)
-review2 = Review.new(date: Date.new(2018,8,19), title: 'Ce costume a changé ma vie!', rate: 5, content: review1_content)
+review1 = Review.new(date: Date.new(2018,8,18), title: 'Sentait mauvais...', rate: 2, content: review1_content)
+review2 = Review.new(date: Date.new(2018,8,21), title: 'Ce costume a changé ma vie!', rate: 5, content: review2_content)
 
 review1.renting = renting1
 review2.renting = renting1
@@ -199,20 +199,20 @@ message2.save!
 # ///
 
 
-renting1 = Renting.new(start_date: Date.new(2018,8,28), end_date: Date.new(2018,8,30))
-renting2 = Renting.new(start_date: Date.new(2018,8,26), end_date: Date.new(2018,8,27))
+renting1 = Renting.new(start_date: Date.new(2018,8,16), end_date: Date.new(2018,8,19), pending: false)
+renting2 = Renting.new(start_date: Date.new(2018,8,20), end_date: Date.new(2018,8,21), pending: false)
 
 renting1.suit = suit2
-renting2.suit = suit2
+renting2.suit = Suit.first
 
 renting1.user = User.first
-renting2.user = User.last(2).first
+renting2.user = User.last(10).first
 
 renting1.save!
 renting2.save!
 
-review1 = Review.new(date: Date.new(2018,8,16), title: 'Sentait mauvais...', rate: 2, content: review1_content)
-review2 = Review.new(date: Date.new(2018,8,19), title: 'Ce costume a changé ma vie!', rate: 5, content: review1_content)
+review1 = Review.new(date: Date.new(2018,8,18), title: 'Sentait mauvais...', rate: 2, content: review1_content)
+review2 = Review.new(date: Date.new(2018,8,21), title: 'Ce costume a changé ma vie!', rate: 5, content: review2_content)
 
 review1.renting = renting1
 review2.renting = renting1
