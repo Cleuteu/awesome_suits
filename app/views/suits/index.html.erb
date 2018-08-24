@@ -28,12 +28,12 @@
               </div>
             </div>
           </div>
-            <% if suit.user.photo.url.nil? %>
-              <%= cl_image_tag("vh5z2ujeausr6hlxy3zf", width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-avatar') %>
-            <% else %>
-              <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-avatar' %>
-            <% end %>
-            <p class="card-price">£ <%= suit.price_per_day %></p>
+          <% if suit.user.photo.url.nil? %>
+            <%= cl_image_tag("vh5z2ujeausr6hlxy3zf", width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-avatar') %>
+          <% else %>
+            <%= cl_image_tag suit.user.photo, width: 80, height: 80, crop: :thumb, gravity: :face, class: 'card-avatar' %>
+          <% end %>
+          <p class="card-price">£ <%= suit.price_per_day %></p>
           <%= link_to suit_path(suit), class: 'card-link' do %><% end %>
         </div>
       </div>
