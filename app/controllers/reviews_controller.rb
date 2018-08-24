@@ -5,6 +5,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     @review.renting = @renting
+    @review.rate = 4
     @review.date = DateTime.now.to_date
     @review.save!
     authorize @review

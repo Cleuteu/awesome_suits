@@ -119,13 +119,13 @@ suit3.user = user
 suit3.save!
 
 
-renting1 = Renting.new(start_date: Date.new(2018,8,16), end_date: Date.new(2018,8,19), pending: false)
+renting1 = Renting.new(start_date: Date.new(2018,8,16), end_date: Date.new(2018,8,19), pending: true)
 renting2 = Renting.new(start_date: Date.new(2018,8,20), end_date: Date.new(2018,8,21), pending: false)
 
 renting1.suit = suit3
 renting2.suit = Suit.first
 
-renting1.user = User.first
+renting1.user = User.last
 renting2.user = User.last(10).first
 
 renting1.save!
@@ -137,7 +137,7 @@ review2 = Review.new(date: Date.new(2018,8,21), title: 'Ce costume a changé ma 
 review1.renting = renting1
 review2.renting = renting1
 
-review1.user = User.first
+review1.user = User.last
 review2.user = User.last(2).first
 
 review1.save!

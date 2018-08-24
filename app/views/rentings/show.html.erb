@@ -19,10 +19,8 @@
       </div>
 
     <div class="order-review-and-chat">
-      <% if current_user == @renting.suit.user %>
-      <% elsif DateTime.now.to_date > @renting.end_date %>
         <%= render 'formreview', review: @review %>
-      <% end %>
+
     </div>
 
     <div class="chat-container">
